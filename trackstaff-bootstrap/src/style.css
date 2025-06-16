@@ -1,0 +1,19 @@
+.collapse .dropdown-item {
+  background-color: rgba(var(--bs-light-rgb), var(--bs-bg-opacity)) !important;
+}
+
+.collapse .dropdown-item i {
+  color: #a7a7a7 !important;
+}
+
+.collapse .dropdown-item.active,
+.collapse .dropdown-item:hover,
+.collapse .dropdown-item:hover i,
+.collapse .dropdown-item.active i {
+  background-color: var(--bs-primary-bg-subtle) !important;
+  color: var(--bs-primary-text) !important;
+}
+
+.collapse span {
+  text-wrap: wrap;
+}

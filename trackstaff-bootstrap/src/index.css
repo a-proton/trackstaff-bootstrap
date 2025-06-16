@@ -1,0 +1,518 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
+
+:root {
+  /* Primary Color Set */
+  --bs-primary: #1ab189;
+  --bs-primary-rgb: 26, 177, 137;
+  --bs-primary-hover: #17a07c;
+  --bs-primary-active: #158f70;
+  --bs-primary-light: #e8f7f2;
+  --bs-primary-bg-subtle: #dcfbec;
+  --bs-primary-bg-subtle-rgb: 232, 247, 242;
+  --bs-primary-light-rgb: 232, 247, 242;
+  --bs-primary-border: #1ab189;
+  --bs-primary-border-hover: #17a07c;
+  --bs-primary-border-active: #158f70;
+  --bs-primary-text: #1ab189;
+  --bs-primary-text-hover: #17a07c;
+  --bs-primary-text-active: #158f70;
+  --bs-primary-gradient: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.15),
+    rgba(255, 255, 255, 0)
+  );
+
+  /* Info Color Set */
+  --bs-info: #12699b;
+  --bs-info-rgb: 18, 105, 155;
+  --bs-info-hover: #105d8c;
+  --bs-info-active: #0e517d;
+  --bs-info-light: #e6f0f7;
+  --bs-info-light-rgb: 230, 240, 247;
+  --bs-info-border: #12699b;
+  --bs-info-border-hover: #105d8c;
+  --bs-info-border-active: #0e517d;
+  --bs-info-text: #12699b;
+  --bs-info-text-hover: #105d8c;
+  --bs-info-text-active: #0e517d;
+  --bs-info-gradient: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.15),
+    rgba(255, 255, 255, 0)
+  );
+
+  /* Progress Color Set */
+  --bs-progress: #0d99ff;
+  --bs-progress-subtle: #cfebff;
+  --bs-progress-subtle-rgb: 203, 238, 255;
+  --bs-progress-rgb: 13, 153, 255;
+  --bs-progress-hover: #0b88e6;
+  --bs-progress-active: #0a77cc;
+  --bs-progress-light: #d4f1ff;
+  --bs-progress-bg-subtle: #cbeeff;
+  --bs-progress-bg-subtle-rgb: 203, 238, 255;
+  --bs-progress-light-rgb: 212, 241, 255;
+  --bs-progress-border: #0d99ff;
+  --bs-progress-border-hover: #0b88e6;
+  --bs-progress-border-active: #0a77cc;
+  --bs-progress-text: #0d99ff;
+  --bs-progress-text-hover: #0b88e6;
+  --bs-progress-text-active: #0a77cc;
+  --bs-progress-gradient: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.15),
+    rgba(255, 255, 255, 0)
+  );
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  overflow-x: hidden;
+}
+
+/* Primary & info & progress button styles */
+.btn-primary,
+.btn-info,
+.btn-progress {
+  color: #fff;
+}
+.bg-progress-subtle {
+  background-color: var(--bs-progress-subtle) !important;
+}
+.btn-primary {
+  background-color: var(--bs-primary);
+  border-color: var(--bs-primary-border);
+}
+.btn-primary:hover {
+  background-color: var(--bs-primary-hover);
+  border-color: var(--bs-primary-border-hover);
+}
+.btn-primary:active,
+.btn-primary:focus,
+.btn-primary.active {
+  background-color: var(--bs-primary-active) !important;
+  border-color: var(--bs-primary-border-active) !important;
+  box-shadow: 0 0 0 0.25rem rgba(var(--bs-primary-rgb), 0.5) !important;
+}
+
+.btn-info {
+  background-color: var(--bs-info);
+  border-color: var(--bs-info-border);
+}
+.btn-info:hover {
+  background-color: var(--bs-info-hover);
+  border-color: var(--bs-info-border-hover);
+}
+.btn-info:active,
+.btn-info:focus,
+.btn-info.active {
+  background-color: var(--bs-info-active) !important;
+  border-color: var(--bs-info-border-active) !important;
+  box-shadow: 0 0 0 0.25rem rgba(var(--bs-info-rgb), 0.5) !important;
+}
+
+.btn-progress {
+  background-color: var(--bs-progress);
+  border-color: var(--bs-progress-border);
+}
+.btn-progress:hover {
+  background-color: var(--bs-progress-hover);
+  border-color: var(--bs-progress-border-hover);
+}
+.btn-progress:active,
+.btn-progress:focus,
+.btn-progress.active {
+  background-color: var(--bs-progress-active) !important;
+  border-color: var(--bs-progress-border-active) !important;
+  box-shadow: 0 0 0 0.25rem rgba(var(--bs-progress-rgb), 0.5) !important;
+}
+
+/* Outline buttons */
+.btn-outline-primary {
+  color: var(--bs-primary);
+  border-color: var(--bs-primary);
+  background-color: transparent;
+}
+.btn-outline-primary:hover {
+  color: #fff;
+  background-color: var(--bs-primary);
+  border-color: var(--bs-primary);
+}
+.btn-outline-primary:active,
+.btn-outline-primary:focus,
+.btn-outline-primary.active {
+  color: #fff !important;
+  background-color: var(--bs-primary-active) !important;
+  border-color: var(--bs-primary-active) !important;
+  box-shadow: 0 0 0 0.25rem rgba(var(--bs-primary-rgb), 0.5) !important;
+}
+
+.btn-outline-info {
+  color: var(--bs-info);
+  border-color: var(--bs-info);
+  background-color: transparent;
+}
+.btn-outline-info:hover {
+  color: #fff;
+  background-color: var(--bs-info);
+  border-color: var(--bs-info);
+}
+.btn-outline-info:active,
+.btn-outline-info:focus,
+.btn-outline-info.active {
+  color: #fff !important;
+  background-color: var(--bs-info-active) !important;
+  border-color: var(--bs-info-active) !important;
+  box-shadow: 0 0 0 0.25rem rgba(var(--bs-info-rgb), 0.5) !important;
+}
+
+.btn-outline-progress {
+  color: var(--bs-progress);
+  border-color: var(--bs-progress);
+  background-color: transparent;
+}
+.btn-outline-progress:hover {
+  color: #fff;
+  background-color: var(--bs-progress);
+  border-color: var(--bs-progress);
+}
+.btn-outline-progress:active,
+.btn-outline-progress:focus,
+.btn-outline-progress.active {
+  color: #fff !important;
+  background-color: var(--bs-progress-active) !important;
+  border-color: var(--bs-progress-active) !important;
+  box-shadow: 0 0 0 0.25rem rgba(var(--bs-progress-rgb), 0.5) !important;
+}
+
+/* Other Component Overrides */
+.text-primary {
+  color: var(--bs-primary-text) !important;
+}
+.text-info {
+  color: var(--bs-info-text) !important;
+}
+.text-progress {
+  color: var(--bs-progress-text) !important;
+}
+
+.bg-primary {
+  background-color: var(--bs-primary) !important;
+}
+.bg-info {
+  background-color: var(--bs-info) !important;
+}
+.bg-progress {
+  background-color: var(--bs-progress) !important;
+}
+
+.border-primary {
+  border-color: var(--bs-primary-border) !important;
+}
+.border-info {
+  border-color: var(--bs-info-border) !important;
+}
+.border-progress {
+  border-color: var(--bs-progress-border) !important;
+}
+
+.link-primary {
+  color: var(--bs-primary-text) !important;
+}
+.link-primary:hover,
+.link-primary:focus {
+  color: var(--bs-primary-text-hover) !important;
+}
+
+.link-info {
+  color: var(--bs-info-text) !important;
+}
+.link-info:hover,
+.link-info:focus {
+  color: var(--bs-info-text-hover) !important;
+}
+
+.link-progress {
+  color: var(--bs-progress-text) !important;
+}
+.link-progress:hover,
+.link-progress:focus {
+  color: var(--bs-progress-text-hover) !important;
+}
+
+/* Poppins Fonts Css */
+.poppins-regular {
+  font-family: "Poppins", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.poppins-medium {
+  font-family: "Poppins", serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.poppins-semibold {
+  font-family: "Poppins", serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.blockquote-footer::before {
+  content: "" !important;
+}
+
+/* Checkbox Primary Color */
+.form-check-input:checked {
+  background-color: var(--bs-primary);
+  border-color: var(--bs-primary);
+}
+
+/* List Item Hover and Selected Styles */
+.dropdown-item:hover,
+.dropdown-item.active {
+  background-color: var(--bs-primary);
+  color: white !important;
+}
+.form-check-input[type="radio"] {
+  border-color: var(--bs-primary);
+}
+
+.form-range::-webkit-slider-thumb {
+  background-color: var(--bs-primary) !important;
+}
+.form-range::-moz-range-thumb {
+  background-color: var(--bs-primary) !important;
+}
+
+.form-range::-moz-range-track {
+  background-color: var(--bs-primary) !important;
+}
+.form-range::-ms-track {
+  background-color: var(--bs-primary) !important;
+}
+
+/* Admin Dashboard Styles */
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Sidebar and Offcanvas Styles */
+
+.sidebar {
+  position: fixed;
+  top: 65px;
+  bottom: 0;
+  z-index: 100;
+  width: 250px;
+}
+
+.sidebar .nav-link,
+.offcanvas .nav-link,
+.dropdown-menu .dropdown-item {
+  color: #555;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  margin: 0.5rem 0.5rem;
+  font-weight: 500;
+  width: inherit;
+}
+
+.sidebar .nav-link:hover,
+.offcanvas .nav-link:hover,
+.sidebar .dropdown-menu .dropdown-item:hover,
+.offcanvas .dropdown-menu .dropdown-item:hover {
+  background-color: var(--bs-primary);
+  color: white;
+}
+
+.sidebar .nav-link.active,
+.offcanvas .nav-link.active,
+.sidebar .dropdown-menu .dropdown-item.active,
+.offcanvas .dropdown-menu .dropdown-item.active {
+  background-color: var(--bs-primary);
+  color: white;
+}
+
+.sidebar .nav-link i,
+.offcanvas .nav-link i,
+.sidebar .dropdown-menu .dropdown-item i,
+.offcanvas .dropdown-menu .dropdown-item i {
+  font-size: 1.2rem;
+}
+
+.offcanvas-backdrop.show {
+  opacity: 0.3;
+}
+
+.offcanvas-body {
+  padding: 0;
+}
+
+/* Notification & Profile Dropdown Menu Styles */
+
+.notification .notification-dropdown-menu {
+  right: -125px;
+  width: 95vw;
+  max-width: 550px;
+}
+
+@media (min-width: 768px) and (max-width: 992px) {
+  .notification .notification-dropdown-menu {
+    right: -150px;
+  }
+}
+
+.notification .dropdown-menu .dropdown-item {
+  font-weight: normal;
+}
+.notification .dropdown-menu .dropdown-item:hover {
+  background-color: var(--bs-primary-bg-subtle);
+  color: inherit !important;
+}
+
+/* Main Styles */
+
+main {
+  margin-top: 80px;
+  min-height: calc(100vh - 80px);
+}
+
+@media (min-width: 768px) {
+  main {
+    margin-left: 250px;
+  }
+}
+
+.table th {
+  font-weight: 500;
+  color: #666;
+}
+
+.table td {
+  vertical-align: middle;
+}
+tbody tr {
+  height: 60px;
+}
+.badge {
+  padding: 0.5em 0.75em;
+  font-weight: 500;
+}
+
+#message_input:focus {
+  box-shadow: none !important;
+}
+
+.nav-pills .nav-link {
+  background-color: transparent;
+  color: #555555;
+  padding: 0.5rem 1rem;
+}
+.nav-pills .nav-link.active {
+  background-color: var(--bs-primary);
+  color: white;
+}
+
+.avatar {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  margin-right: -10px;
+  border: 2px solid white;
+}
+
+.task-table li:hover i {
+  color: white !important;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+@media (max-width: 1200px) {
+  .chat_width {
+    width: 70%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .chat_width {
+    width: 45%;
+  }
+}
+
+/* Multi User Selector CSS START */
+
+.multi-user-container {
+  max-width: 100%;
+  margin: auto;
+  /* font-family: Arial, sans-serif; */
+}
+
+.multi-user-label {
+  display: block;
+  margin-bottom: 0px;
+  /* font-weight: bold; */
+}
+
+.tag-input {
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  padding: 8px 12px;
+  min-height: 40px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  background-color: white;
+  cursor: text;
+}
+
+.user-tag {
+  background-color: #e5e7eb;
+  color: #374151;
+  padding: 4px 10px;
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+}
+
+.remove-tag-btn {
+  background: none;
+  border: none;
+  color: #6b7280;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.remove-tag-btn:hover {
+  color: #ef4444;
+}
+
+.user-search-input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 14px;
+  min-width: 100px;
+}
+
+/* Multi User Selector CSS END */
+
+.bi-chevron-left::before,
+.bi-chevron-right::before {
+  margin-top: 6px;
+}
