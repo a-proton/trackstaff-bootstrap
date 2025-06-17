@@ -32,15 +32,27 @@ const MenuItems = () => {
         </a>
       </li>
       <li className="nav-item">
-        <a className="nav-link" href="attendance.html">
+        <a
+          className={`nav-link ${
+            location.pathname === "/attendence" ? "active" : ""
+          }`}
+          aria-current="page"
+          href="attendence"
+        >
           <div className="d-flex align-items-center gap-2">
             <i className="bi bi-clock"></i>
-            <span>Attendance</span>
+            <span>Attendence</span>
           </div>
         </a>
       </li>
       <li className="nav-item">
-        <a className="nav-link" href="logs.html">
+        <a
+          className={`nav-link ${
+            location.pathname === "/employee-logs" ? "active" : ""
+          }`}
+          aria-current="page"
+          href="/employee-logs"
+        >
           <div className="d-flex align-items-center gap-2">
             <i className="bi bi-file-earmark-text"></i>
             <span>Logs</span>
@@ -48,7 +60,13 @@ const MenuItems = () => {
         </a>
       </li>
       <li className="nav-item">
-        <a className="nav-link" href="tasks.html">
+        <a
+          className={`nav-link ${
+            location.pathname === "/tasks" ? "active" : ""
+          }`}
+          aria-current="page"
+          href="/tasks"
+        >
           <div className="d-flex align-items-center gap-2">
             <i className="bi bi-check2-circle"></i>
             <span>Tasks</span>
@@ -56,7 +74,13 @@ const MenuItems = () => {
         </a>
       </li>
       <li className="nav-item">
-        <a className="nav-link" href="projects.html">
+        <a
+          className={`nav-link ${
+            location.pathname === "/projects" ? "active" : ""
+          }`}
+          aria-current="page"
+          href="/projects"
+        >
           <div className="d-flex align-items-center gap-2">
             <i className="bi bi-suitcase-lg"></i>
             <span>Projects</span>
@@ -64,7 +88,13 @@ const MenuItems = () => {
         </a>
       </li>
       <li className="nav-item">
-        <a className="nav-link" href="meetings.html">
+        <a
+          className={`nav-link ${
+            location.pathname === "/meetings" ? "active" : ""
+          }`}
+          aria-current="page"
+          href="/meetings"
+        >
           <div className="d-flex align-items-center gap-2">
             <i className="bi bi-camera-video"></i>
             <span>Meetings</span>
@@ -72,7 +102,13 @@ const MenuItems = () => {
         </a>
       </li>
       <li className="nav-item">
-        <a className="nav-link" href="reminders.html">
+        <a
+          className={`nav-link ${
+            location.pathname === "/reminders" ? "active" : ""
+          }`}
+          aria-current="page"
+          href="/reminders"
+        >
           <div className="d-flex align-items-center gap-2">
             <i className="bi bi-calendar4-event"></i>
             <span>Reminders</span>
