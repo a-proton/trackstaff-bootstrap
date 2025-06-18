@@ -48,10 +48,10 @@ const MenuItems = () => {
       <li className="nav-item">
         <a
           className={`nav-link ${
-            location.pathname === "/employee-logs" ? "active" : ""
+            location.pathname === "/emp-logs" ? "active" : ""
           }`}
           aria-current="page"
-          href="/employee-logs"
+          href="/emp-logs"
         >
           <div className="d-flex align-items-center gap-2">
             <i className="bi bi-file-earmark-text"></i>

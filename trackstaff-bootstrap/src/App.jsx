@@ -22,6 +22,13 @@ import Meetings from "./pages/Meetings";
 import Reminders from "./pages/Reminders";
 import ViewEmployeeDetails from "./pages/ViewEmployeeDetails";
 import EditEmployee from "./pages/EditEmployee";
+import EmpDashboard from "./employee-pages/emp-dashboard";
+import EmpLogs from "./employee-pages/emp-logs";
+import EmpTasks from "./employee-pages/emp-tasks";
+import EmpProjects from "./employee-pages/emp-projects";
+import EmpMeetings from "./employee-pages/emp-meetings";
+import EmpReminders from "./employee-pages/emp-reminders";
+
 function App() {
   return (
     <BrowserRouter>
@@ -32,7 +39,7 @@ function App() {
           <Route path="employee" element={<EmployeeManagement />} />
           <Route path="add-employee" element={<AddEmployee />} />
           <Route path="attendence" element={<EmployeeAttendence />} />
-          <Route path="employee-logs" element={<Logs />} />
+          <Route path="emp-logs" element={<Logs />} />
           <Route path="screen-proofs" element={<ScreenProofs />} />
           <Route path="tasks" element={<Tasks />} />
           <Route path="sub-tasks" element={<SubTask />} />
@@ -42,7 +49,13 @@ function App() {
           <Route path="view-employee" element={<ViewEmployeeDetails />} />
           <Route path="edit-employee" element={<EditEmployee />} />
           {/* <Route path="notifications" element={<Notifications />} /> */}
-          {/* Add more admin routes here */}
+          {/* Employee Route Paths */}
+          <Route path="employee-dashboard" element={<EmpDashboard />} />
+          <Route path="employee-logs" element={<EmpLogs />} />
+          <Route path="employee-tasks" element={<EmpTasks />} />
+          <Route path="employee-projects" element={<EmpProjects />} />
+          <Route path="employee-meetings" element={<EmpMeetings />} />
+          <Route path="employee-reminders" element={<EmpReminders />} />
         </Route>
         {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
         <Route path="*" element={<NotFound />} />

@@ -1,0 +1,25 @@
+:root {
+  --progress-percent: 24%;
+  --color-low: #dc3545;
+  --color-moderate: #ffc107;
+  --color-high: #1ab189;
+  --color-complete: var(--color-moderate);
+  --color-bg: #f2f2f2;
+}
+
+.custom-conic-gradient {
+  background-image: conic-gradient(
+    from 0deg,
+    var(--color-complete) 0%,
+    var(--color-complete) var(--progress-percent),
+    var(--color-bg) var(--progress-percent),
+    var(--color-bg) 100%
+  );
+  width: 200px;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+}
+
+.bg-progress {
+  background-color: var(--color-complete);
+}
