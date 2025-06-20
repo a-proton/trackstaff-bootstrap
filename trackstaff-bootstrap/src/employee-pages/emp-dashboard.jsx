@@ -4,14 +4,29 @@ import { useState } from "react";
 import "../empstyle.css";
 const EmpDashboard = () => {
   const [currentTime, setCurrentTime] = useState(new Date());
+  const [isCheckedIn, setIsCheckedIn] = useState(false);
+  const [hasTimeBeenChanged, setHasTimeBeenChanged] = useState(false);
+  // const [startDate, setStartDate] = useState("");
+  const [dueDate, setDueDate] = useState("");
+  const [checkInDate, setCheckInDate] = useState("");
+
+  const handleDueDateChange = (e) => {
+    if (!hasTimeBeenChanged) {
+      setDueDate(e.target.value);
+      setHasTimeBeenChanged(true);
+    }
+  };
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentTime(new Date());
     }, 1000);
-
     return () => clearInterval(timer);
   }, []);
 
+  useEffect(() => {
+    const today = new Date().toISOString().split("T")[0];
+    setCheckInDate(today);
+  }, []);
   const formatTime = (date) => {
     return date
       .toLocaleTimeString("en-US", {
@@ -31,34 +46,142 @@ const EmpDashboard = () => {
       day: "numeric",
     });
   };
+
   return (
-    <main className="p-2">
+    <main className="p-2" style={{ backgroundColor: "#F5F6FA" }}>
       <div className="px-2">
         {/* <!-- Attendance & Productivity Tracker Row Start --> */}
         <div className="row overflow-hidden g-3 mb-3 pt-1">
           {/* <!-- Attendance Tracker Start --> */}
-          <div className="col-12 col-xl-4 d-flex align-items-stretch ">
+          <div className="col-12 col-xl-4 d-flex align-items-stretch">
             <div className="card border-0 shadow-sm h-100 w-100 rounded-3">
               <div className="card-body text-center h-100">
-                <h5 className="card-title d-flex align-items-start gap-2 py-1 text-start">
+                <h5
+                  className="card-title d-flex align-items-start gap-2 py-1 text-start"
+                  style={{ fontSize: "22px" }}
+                >
                   <i className="bi bi-clock"></i>
                   Attendance Tracker
                 </h5>
 
-                <div className="text-4xl font-bold text-gray-800 mb-2 font-mono">
+                <div
+                  className="fw-medium pt-3 pt-lg-5"
+                  style={{ letterSpacing: "2px", fontSize: "38px" }}
+                >
                   {formatTime(currentTime)}
                 </div>
-                <div className="text-gray-600 text-lg">
+                <div className="text-muted" style={{ fontSize: "18px" }}>
                   {formatDate(currentTime)}
                 </div>
                 <div className="d-flex justify-content-center m-4">
                   <button
-                    id="check-btn"
-                    className="btn d-flex justify-content-center align-items-center gap-2 py-2 px-4 btn-primary"
-                    style={{ width: "175px" }}
+                    data-bs-toggle="modal"
+                    data-bs-target="#checkInModal"
+                    className={`btn d-flex justify-content-center align-items-center gap-2   mt-4 ${
+                      isCheckedIn ? "btn-danger" : "btn-primary"
+                    }`}
+                    style={{ width: "175px", fontSize: "20px" }}
                   >
-                    <i className="bi bi-box-arrow-in-right fs-5"></i> Check In
+                    <i
+                      className={`bi ${
+                        isCheckedIn
+                          ? "bi-box-arrow-right"
+                          : "bi-box-arrow-in-right"
+                      }`}
+                    ></i>
+                    {isCheckedIn ? "Check Out" : "Check In"}
                   </button>
+                </div>
+                <div
+                  className="modal fade text-start"
+                  id="checkInModal"
+                  tabIndex="-1"
+                  aria-labelledby="checkInModallabel"
+                  aria-hidden="true"
+                >
+                  <div className="modal-dialog">
+                    <div className="modal-content">
+                      <div className="modal-header pb-0 border-bottom-0">
+                        <div>
+                          <h5 className="modal-title" id="addTaskModalLabel">
+                            Add Attendence
+                          </h5>
+                        </div>
+                        <button
+                          type="button"
+                          className="btn-close"
+                          data-bs-dismiss="modal"
+                          aria-label="Close"
+                        ></button>
+                      </div>
+                      <div className="modal-body">
+                        <form>
+                          <div className="mb-3">
+                            <label htmlFor="checkInDate" className="form-label">
+                              DATE
+                            </label>
+                            <input
+                              type="date"
+                              className="form-control"
+                              id="checkInDate"
+                              aria-label="Date"
+                              value={checkInDate || ""}
+                              disabled
+                            />
+                          </div>
+                          <div className="mb-3">
+                            <label hmtlFor="checkInTime" className="form-label">
+                              TIME
+                            </label>
+                            <input
+                              type="time"
+                              className="form-control"
+                              id="checkInTime"
+                              aria-label="Time"
+                              onChange={handleDueDateChange}
+                              disabled={hasTimeBeenChanged}
+                            />{" "}
+                          </div>
+                          <div className="mb-3">
+                            <label
+                              hmtlFor="task-description"
+                              className="form-label"
+                            >
+                              REMARKS
+                            </label>
+                            <textarea
+                              className="form-control"
+                              id="task-description"
+                              rows="3"
+                              placeholder="Enter any remarks..."
+                              aria-label="Sub Task"
+                            ></textarea>
+                          </div>
+                        </form>
+                      </div>
+                      <div className="modal-footer border-top-0">
+                        <button
+                          type="button"
+                          className="btn border px-4"
+                          data-bs-dismiss="modal"
+                        >
+                          Cancel
+                        </button>
+                        <button
+                          type="button"
+                          className="btn btn-primary px-4"
+                          data-bs-dismiss="modal"
+                          onClick={() => {
+                            setIsCheckedIn(true);
+                            setShowAlert(true);
+                            setTimeout(() => setShowAlert(false), 3000);
+                          }}
+                        >
+                          Save Attendance
+                        </button>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -103,26 +226,24 @@ const EmpDashboard = () => {
                 >
                   <div className="d-flex align-items-center gap-2">
                     <div
-                      id="performanceBox"
                       className="rounded-1"
                       style={{
                         width: "20px",
-                        height: "20px;",
-                        backgroundColor:
-                          " rgb(255, 193, 7); border-color: rgb(255, 193, 7)",
+                        height: "20px",
+                        backgroundColor: "rgb(255, 193, 7)",
+                        borderColor: "rgb(255, 193, 7)",
                       }}
                     ></div>
                     <span id="performanceText">Overall Performance (61%)</span>
                   </div>
                   <div className="d-flex align-items-center gap-2">
                     <div
-                      id="remainingBox"
                       className="rounded-1"
                       style={{
                         width: "20px",
                         height: "20px",
-                        backgroundColor:
-                          " rgb(242, 242, 242); border-color: rgb(242, 242, 242)",
+                        backgroundColor: "rgb(242, 242, 242)",
+                        borderColor: "rgb(242, 242, 242)",
                       }}
                     ></div>
                     <span id="remainingText">Remaining (39%)</span>
@@ -153,19 +274,18 @@ const EmpDashboard = () => {
                   <div className="col-12 col-lg-7 text-start d-flex flex-column gap-2">
                     <div>
                       <div className="d-flex align-items-center justify-content-between gap-2">
-                        <p className="m-0">Average Key Press Percentage</p>
+                        <p className="m-0 mb-1">Average Key Press Percentage</p>
                         <p id="keyPressPercent" className="m-0 fw-semibold">
                           38%
                         </p>
                       </div>
                       <div className="progress">
                         <div
-                          id="keyPressBar"
                           className="progress-bar rounded-3"
                           role="progressbar"
                           style={{
-                            width: "38%;",
-                            backgroundColor: " rgb(220, 53, 69);",
+                            width: "38%",
+                            backgroundColor: " rgb(226, 38, 38)",
                           }}
                           aria-valuenow="38"
                           aria-valuemin="0"
@@ -175,7 +295,9 @@ const EmpDashboard = () => {
                     </div>
                     <div>
                       <div className="d-flex align-items-center justify-content-between gap-2">
-                        <p className="m-0">Average Mouse Click Percentage</p>
+                        <p className="m-0 mb-1">
+                          Average Mouse Click Percentage
+                        </p>
                         <p id="mouseClickPercent" className="m-0 fw-semibold">
                           56%
                         </p>
@@ -197,7 +319,9 @@ const EmpDashboard = () => {
                     </div>
                     <div>
                       <div className="d-flex align-items-center justify-content-between gap-2">
-                        <p className="m-0">Average Mouse Movement Percentage</p>
+                        <p className="m-0 mb-1">
+                          Average Mouse Movement Percentage
+                        </p>
                         <p
                           id="mouseMovementPercent"
                           className="m-0 fw-semibold"

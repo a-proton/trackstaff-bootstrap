@@ -83,8 +83,12 @@ const Dashboard = () => {
             <div className="card p-3 flex-column gap-3 h-100 border-0">
               <div className="d-flex align-items-center justify-content-between">
                 <div className="d-flex flex-column align-items-start gap-1">
-                  <h4 className="fw-semibold m-0">Employee Attendance</h4>
-                  <p className="text-muted m-0 fs-5">Week of Apr 20-27, 2025</p>
+                  <h4 className="fw-semibold m-0" style={{ fontSize: "24px" }}>
+                    Employee Attendance
+                  </h4>
+                  <p className="text-muted m-0  " style={{ fontSize: "18px" }}>
+                    Week of Apr 20-27, 2025
+                  </p>
                 </div>
                 <div className="d-flex align-items-center gap-2">
                   <button className="btn py-0 px-1" id="prevLogsBtn">
@@ -108,8 +112,15 @@ const Dashboard = () => {
                   <div className="flex-fill">
                     <div className="d-flex align-items-center justify-content-between gap-2 border-start border-4 border-progress rounded-4 p-3 shadow-sm">
                       <div className="">
-                        <p className="mb-0">Avg Attendance</p>
-                        <p className="mb-0 fs-1 fw-bold text-progress">85%</p>
+                        <p className="mb-0" style={{ fontSize: "12px" }}>
+                          Avg Attendance
+                        </p>
+                        <p
+                          className="mb-0  fw-bold text-progress"
+                          style={{ fontSize: "24px" }}
+                        >
+                          85%
+                        </p>
                       </div>
                       <div
                         className="bg-progress-subtle p-2 rounded-circle d-flex align-items-center justify-content-center"
@@ -122,10 +133,18 @@ const Dashboard = () => {
                   <div className="flex-fill">
                     <div className="d-flex align-items-center justify-content-between gap-2 border-start border-4 border-primary rounded-4 p-3 shadow-sm">
                       <div className="">
-                        <p className="mb-0">Total Present</p>
-                        <p className="mb-0 fs-1 fw-bold text-primary">
+                        <p className="mb-0" style={{ fontSize: "12px" }}>
+                          Total Present
+                        </p>
+                        <p
+                          className="mb-0  fw-bold text-primary"
+                          style={{ fontSize: "24px" }}
+                        >
                           78{" "}
-                          <small className="text-muted fs-4 fw-normal">
+                          <small
+                            className="text-muted  fw-normal"
+                            style={{ fontSize: "14px" }}
+                          >
                             days
                           </small>
                         </p>
@@ -141,10 +160,18 @@ const Dashboard = () => {
                   <div className="flex-fill">
                     <div className="d-flex align-items-center justify-content-between gap-2 border-start border-4 border-danger rounded-4 p-3 shadow-sm flex-fill">
                       <div className="">
-                        <p className="mb-0">Total Absent</p>
-                        <p className="mb-0 fs-1 fw-bold text-danger">
+                        <p className="mb-0" style={{ fontSize: "12px" }}>
+                          Total Absent
+                        </p>
+                        <p
+                          className="mb-0  fw-bold text-danger"
+                          style={{ fontSize: "24px" }}
+                        >
                           50{" "}
-                          <small className="text-muted fs-4 fw-normal">
+                          <small
+                            className="text-muted  fw-normal"
+                            style={{ fontSize: "14px" }}
+                          >
                             days
                           </small>
                         </p>
@@ -161,7 +188,7 @@ const Dashboard = () => {
               </div>
               <div className="mt-auto mb-3">
                 <a
-                  href="#"
+                  href="/attendence"
                   className="text-primary fs-5 border-0 border-bottom border-primary pb-1"
                 >
                   View Attendance <i className="bi bi-chevron-right"></i>
@@ -169,17 +196,23 @@ const Dashboard = () => {
               </div>
             </div>
           </div>
-          <div className="col-12 col-xl-6 col-xxl-4 p-2 align-items-stretch">
+          <div className="col-12 col-xl-6 col-xxl-5 p-2 align-items-stretch">
             <div className="card p-3 flex-column gap-3 h-100 border-0">
               <div className="d-flex align-items-center justify-content-between">
                 <div className="d-flex align-items-center gap-3">
-                  <h4 className="fw-semibold m-0">Projects</h4>
+                  <h4 className="fw-semibold m-0" style={{ fontSize: "24px" }}>
+                    Projects
+                  </h4>
                 </div>
               </div>
               <div className="">
-                <h4 className="fw-semibold">Kamsansar</h4>
+                <h3 className="fw-semibold" style={{ fontSize: "20px" }}>
+                  Kamsansar
+                </h3>
                 <div className="d-flex justify-content-between gap-1 mb-1">
-                  <p className="mb-0 fw-medium fs-5">Overall completion</p>
+                  <p className="mb-0 fw-medium  " style={{ fontSize: "14px" }}>
+                    Overall completion
+                  </p>
                   <p className="mb-0 text-danger fw-semibold">36%</p>
                 </div>
                 <div
@@ -197,34 +230,38 @@ const Dashboard = () => {
                 <div className="d-flex flex-wrap gap-2">
                   <p
                     className="bg-primary text-white p-2 rounded-5"
-                    style={{ fontSize: "1rem" }}
+                    style={{ fontSize: "11px" }}
                   >
                     Completed: 14
                   </p>
                   <p
                     className="bg-progress text-white p-2 rounded-5"
-                    style={{ fontSize: "1rem" }}
+                    style={{ fontSize: "11px" }}
                   >
                     InProgress: 6
                   </p>
                   <p
                     className="bg-warning text-white p-2 rounded-5"
-                    style={{ fontSize: "1rem" }}
+                    style={{ fontSize: "11px" }}
                   >
                     Pending: 2
                   </p>
                   <p
                     className="bg-danger text-white p-2 rounded-5"
-                    style={{ fontSize: "1rem" }}
+                    style={{ fontSize: "11px" }}
                   >
                     Cancelled: 1
                   </p>
                 </div>
               </div>
               <div className="w-100">
-                <h4 className="fw-semibold">Kamsansar</h4>
+                <h4 className="fw-semibold" style={{ fontSize: "20px" }}>
+                  Kamsansar
+                </h4>
                 <div className="d-flex justify-content-between gap-1 mb-1">
-                  <p className="mb-0 fw-medium fs-5">Overall completion</p>
+                  <p className="mb-0 fw-medium " style={{ fontSize: "14px" }}>
+                    Overall completion
+                  </p>
                   <p className="mb-0 text-progress fw-semibold">68%</p>
                 </div>
                 <div
@@ -242,34 +279,38 @@ const Dashboard = () => {
                 <div className="d-flex flex-wrap gap-2">
                   <p
                     className="bg-primary text-white p-2 rounded-5"
-                    style={{ fontSize: "1rem" }}
+                    style={{ fontSize: "11px" }}
                   >
                     Completed: 14
                   </p>
                   <p
                     className="bg-progress text-white p-2 rounded-5"
-                    style={{ fontSize: "1rem" }}
+                    style={{ fontSize: "11px" }}
                   >
                     InProgress: 6
                   </p>
                   <p
                     className="bg-warning text-white p-2 rounded-5"
-                    style={{ fontSize: "1rem" }}
+                    style={{ fontSize: "11px" }}
                   >
                     Pending: 2
                   </p>
                   <p
                     className="bg-danger text-white p-2 rounded-5"
-                    style={{ fontSize: "1rem" }}
+                    style={{ fontSize: "11px" }}
                   >
                     Cancelled: 1
                   </p>
                 </div>
               </div>
               <div className="">
-                <h4 className="fw-semibold">Kamsansar</h4>
+                <h4 className="fw-semibold" style={{ fontSize: "20px" }}>
+                  Kamsansar
+                </h4>
                 <div className="d-flex justify-content-between gap-1 mb-1">
-                  <p className="mb-0 fw-medium fs-5">Overall completion</p>
+                  <p className="mb-0 fw-medium  " style={{ fontSize: "14px" }}>
+                    Overall completion
+                  </p>
                   <p className="mb-0 text-primary fw-semibold">90%</p>
                 </div>
                 <div
@@ -287,25 +328,25 @@ const Dashboard = () => {
                 <div className="d-flex flex-wrap gap-2">
                   <p
                     className="bg-primary text-white p-2 rounded-5"
-                    style={{ fontSize: "1rem" }}
+                    style={{ fontSize: "11px" }}
                   >
                     Completed: 14
                   </p>
                   <p
                     className="bg-progress text-white p-2 rounded-5"
-                    style={{ fontSize: "1rem" }}
+                    style={{ fontSize: "11px" }}
                   >
                     InProgress: 6
                   </p>
                   <p
                     className="bg-warning text-white p-2 rounded-5"
-                    style={{ fontSize: "1rem" }}
+                    style={{ fontSize: "11px" }}
                   >
                     Pending: 2
                   </p>
                   <p
                     className="bg-danger text-white p-2 rounded-5"
-                    style={{ fontSize: "1rem" }}
+                    style={{ fontSize: "11px" }}
                   >
                     Cancelled: 1
                   </p>
@@ -314,7 +355,7 @@ const Dashboard = () => {
 
               <div className="mt-auto mb-3">
                 <a
-                  href="#"
+                  href="/projects"
                   className="text-primary fs-5 border-0 border-bottom border-primary pb-1"
                 >
                   View Projects <i className="bi bi-chevron-right"></i>
@@ -322,29 +363,37 @@ const Dashboard = () => {
               </div>
             </div>
           </div>
-          <div className="col-12 col-xxl-4 p-2 align-items-stretch">
+          <div className="col-12 col-xxl-3 p-2 align-items-stretch">
             <div className="d-flex flex-column flex-lg-row flex-xxl-column gap-3 h-100">
               <div className="card p-3 flex-column gap-3 border-0 col">
                 <div className="d-flex align-items-center justify-content-between">
                   <div className="d-flex flex-column gap-3">
-                    <h4 className="fw-semibold m-0">System Alerts</h4>
-                    <p className="text-danger m-0 fs-5">
+                    <h4
+                      className="fw-semibold m-0"
+                      style={{ fontSize: "20px" }}
+                    >
+                      System Alerts
+                    </h4>
+                    <p className="text-danger m-0" style={{ fontSize: "15px" }}>
                       <i className="bi bi-exclamation-circle"></i> 3 employee
                       absent today
                     </p>
-                    <p className="text-danger m-0 fs-5">
+                    <p className="text-danger m-0" style={{ fontSize: "15px" }}>
                       <i className="bi bi-exclamation-circle"></i> 34 tasks
                       delayed
                     </p>
-                    <p className="text-danger m-0 fs-5">
+                    <p
+                      className="text-danger m-0 "
+                      style={{ fontSize: "15px" }}
+                    >
                       <i className="bi bi-exclamation-circle"></i> 2 project
                       approval pending
                     </p>
-                    <p className="text-danger m-0 fs-5">
+                    <p className="text-danger m-0" style={{ fontSize: "16px" }}>
                       <i className="bi bi-exclamation-circle"></i> 1 project
                       approval rejected
                     </p>
-                    <p className="text-danger m-0 fs-5">
+                    <p className="text-danger m-0" style={{ fontSize: "15px" }}>
                       <i className="bi bi-exclamation-circle"></i> 1 project
                       approval rejected
                     </p>
@@ -354,20 +403,40 @@ const Dashboard = () => {
               <div className="card p-3 flex-column gap-3 border-0 col">
                 <div className="d-flex align-items-center justify-content-between">
                   <div className="d-flex flex-column gap-3 w-100">
-                    <h4 className="fw-semibold m-0">Quick Links</h4>
-                    <button className="btn btn-primary w-100 rounded-3 fs-4 text-start">
+                    <h4
+                      className="fw-semibold m-0"
+                      style={{ fontSize: "20px" }}
+                    >
+                      Quick Links
+                    </h4>
+                    <button
+                      className="btn btn-primary w-100 rounded-3 text-start"
+                      style={{ fontSize: "16px" }}
+                    >
                       <i className="bi bi-plus"></i> Add Project
                     </button>
-                    <button className="btn btn-primary w-100 rounded-3 fs-4 text-start">
+                    <button
+                      className="btn btn-primary w-100 rounded-3 text-start"
+                      style={{ fontSize: "16px" }}
+                    >
                       <i className="bi bi-plus"></i> Add Task
                     </button>
-                    <button className="btn btn-primary w-100 rounded-3 fs-4 text-start">
+                    <button
+                      className="btn btn-primary w-100 rounded-3 text-start"
+                      style={{ fontSize: "16px" }}
+                    >
                       <i className="bi bi-plus"></i> Add Employee
                     </button>
-                    <button className="btn btn-primary w-100 rounded-3 fs-4 text-start">
+                    <button
+                      className="btn btn-primary w-100 rounded-3 text-start"
+                      style={{ fontSize: "16px" }}
+                    >
                       <i className="bi bi-plus"></i> Add Attendance
                     </button>
-                    <button className="btn btn-primary w-100 rounded-3 fs-4 text-start">
+                    <button
+                      className="btn btn-primary w-100 rounded-3 text-start"
+                      style={{ fontSize: "16px" }}
+                    >
                       <i className="bi bi-plus"></i> Add Meeting
                     </button>
                   </div>
@@ -384,7 +453,9 @@ const Dashboard = () => {
             <div className="card p-3 flex-column gap-3 h-100 border-0">
               <div className="d-flex align-items-center justify-content-between">
                 <div className="d-flex align-items-center gap-3">
-                  <h4 className="fw-semibold m-0">Employee Activities</h4>
+                  <h4 className="fw-semibold m-0" style={{ fontSize: "20px" }}>
+                    Employee Activities
+                  </h4>
                 </div>
               </div>
 
@@ -399,10 +470,20 @@ const Dashboard = () => {
                   </div>
                   <div className="flex-fill">
                     <div className="d-flex justify-content-between gap-2">
-                      <p className="mb-0 fw-medium fs-5">Nirmal GC</p>
+                      <p
+                        className="mb-0 fw-medium "
+                        style={{ fontSize: "18px" }}
+                      >
+                        Nirmal GC
+                      </p>
                       <small className="mb-0 text-muted">2 hours ago</small>
                     </div>
-                    <p className="mb-0 fs-6 text-muted">Completed Tasks</p>
+                    <p
+                      className="mb-0   text-muted"
+                      style={{ fontSize: "14px" }}
+                    >
+                      Completed Tasks
+                    </p>
                   </div>
                 </div>
               </div>
@@ -418,10 +499,17 @@ const Dashboard = () => {
                   </div>
                   <div className="flex-fill">
                     <div className="d-flex justify-content-between gap-2">
-                      <p className="mb-0 fw-medium fs-5">Sangam Giri</p>
+                      <p
+                        className="mb-0 fw-medium "
+                        style={{ fontSize: "18px" }}
+                      >
+                        Sangam Giri
+                      </p>
                       <small className="mb-0 text-muted">2 hours ago</small>
                     </div>
-                    <p className="mb-0 fs-6 text-muted">Added New Tasks</p>
+                    <p className="mb-0 text-muted" style={{ fontSize: "14px" }}>
+                      Added New Tasks
+                    </p>
                   </div>
                 </div>
               </div>
@@ -437,10 +525,20 @@ const Dashboard = () => {
                   </div>
                   <div className="flex-fill">
                     <div className="d-flex justify-content-between gap-2">
-                      <p className="mb-0 fw-medium fs-5">Mandeep</p>
+                      <p
+                        className="mb-0 fw-medium "
+                        style={{ fontSize: "18px" }}
+                      >
+                        Mandeep
+                      </p>
                       <small className="mb-0 text-muted">2 hours ago</small>
                     </div>
-                    <p className="mb-0 fs-6 text-muted">Checked In</p>
+                    <p
+                      className="mb-0   text-muted"
+                      style={{ fontSize: "14px" }}
+                    >
+                      Checked In
+                    </p>
                   </div>
                 </div>
               </div>
@@ -456,10 +554,20 @@ const Dashboard = () => {
                   </div>
                   <div className="flex-fill">
                     <div className="d-flex justify-content-between gap-2">
-                      <p className="mb-0 fw-medium fs-5">Nirmal GC</p>
+                      <p
+                        className="mb-0 fw-medium "
+                        style={{ fontSize: "18px" }}
+                      >
+                        Nirmal GC
+                      </p>
                       <small className="mb-0 text-muted">2 hours ago</small>
                     </div>
-                    <p className="mb-0 fs-6 text-muted">Checked Out</p>
+                    <p
+                      className="mb-0   text-muted"
+                      style={{ fontSize: "14px" }}
+                    >
+                      Checked Out
+                    </p>
                   </div>
                 </div>
               </div>
@@ -475,10 +583,20 @@ const Dashboard = () => {
                   </div>
                   <div className="flex-fill">
                     <div className="d-flex justify-content-between gap-2">
-                      <p className="mb-0 fw-medium fs-5">Nirmal GC</p>
+                      <p
+                        className="mb-0 fw-medium  "
+                        style={{ fontSize: "18px" }}
+                      >
+                        Nirmal GC
+                      </p>
                       <small className="mb-0 text-muted">2 hours ago</small>
                     </div>
-                    <p className="mb-0 fs-6 text-muted">Updated tasks</p>
+                    <p
+                      className="mb-0   text-muted"
+                      style={{ fontSize: "14px" }}
+                    >
+                      Updated tasks
+                    </p>
                   </div>
                 </div>
               </div>
@@ -494,10 +612,20 @@ const Dashboard = () => {
                   </div>
                   <div className="flex-fill">
                     <div className="d-flex justify-content-between gap-2">
-                      <p className="mb-0 fw-medium fs-5">Nirmal GC</p>
+                      <p
+                        className="mb-0 fw-medium "
+                        style={{ fontSize: "18px" }}
+                      >
+                        Nirmal GC
+                      </p>
                       <small className="mb-0 text-muted">2 hours ago</small>
                     </div>
-                    <p className="mb-0 fs-6 text-muted">Checked In</p>
+                    <p
+                      className="mb-0   text-muted"
+                      style={{ fontSize: "14px" }}
+                    >
+                      Checked In
+                    </p>
                   </div>
                 </div>
               </div>
@@ -507,7 +635,9 @@ const Dashboard = () => {
             <div className="card p-3 flex-column gap-3 h-100 border-0">
               <div className="d-flex align-items-center justify-content-between">
                 <div className="d-flex align-items-center gap-3">
-                  <h4 className="fw-semibold m-0">Performance Timeline</h4>
+                  <h4 className="fw-semibold m-0" style={{ fontSize: "20px" }}>
+                    Performance Timeline
+                  </h4>
                 </div>
               </div>
 
@@ -522,7 +652,12 @@ const Dashboard = () => {
                   </div>
                   <div className="flex-fill">
                     <div className="d-flex justify-content-between gap-2">
-                      <p className="mb-0 fw-medium fs-5">Nirmal GC</p>
+                      <p
+                        className="mb-0 fw-medium "
+                        style={{ fontSize: "18px" }}
+                      >
+                        Nirmal GC
+                      </p>
                       <p className="mb-0 text-primary fw-semibold">78%</p>
                     </div>
                     <div
@@ -552,7 +687,12 @@ const Dashboard = () => {
                   </div>
                   <div className="flex-fill">
                     <div className="d-flex justify-content-between gap-2">
-                      <p className="mb-0 fw-medium fs-5">Sangam Giri</p>
+                      <p
+                        className="mb-0 fw-medium "
+                        style={{ fontSize: "18px" }}
+                      >
+                        Sangam Giri
+                      </p>
                       <p className="mb-0 text-danger fw-semibold">24%</p>
                     </div>
                     <div
@@ -582,7 +722,12 @@ const Dashboard = () => {
                   </div>
                   <div className="flex-fill">
                     <div className="d-flex justify-content-between gap-2">
-                      <p className="mb-0 fw-medium fs-5">Mandeep</p>
+                      <p
+                        className="mb-0 fw-medium "
+                        style={{ fontSize: "18px" }}
+                      >
+                        Mandeep
+                      </p>
                       <p className="mb-0 text-warning fw-semibold">56%</p>
                     </div>
                     <div
@@ -612,7 +757,12 @@ const Dashboard = () => {
                   </div>
                   <div className="flex-fill">
                     <div className="d-flex justify-content-between gap-2">
-                      <p className="mb-0 fw-medium fs-5">Nirmal GC</p>
+                      <p
+                        className="mb-0 fw-medium "
+                        style={{ fontSize: "18px" }}
+                      >
+                        Nirmal GC
+                      </p>
                       <p className="mb-0 text-progress fw-semibold">68%</p>
                     </div>
                     <div
@@ -642,7 +792,12 @@ const Dashboard = () => {
                   </div>
                   <div className="flex-fill">
                     <div className="d-flex justify-content-between gap-2">
-                      <p className="mb-0 fw-medium fs-5">Nirmal GC</p>
+                      <p
+                        className="mb-0 fw-medium  "
+                        style={{ fontSize: "18px" }}
+                      >
+                        Nirmal GC
+                      </p>
                       <p className="mb-0 text-primary fw-semibold">89%</p>
                     </div>
                     <div
@@ -672,10 +827,50 @@ const Dashboard = () => {
                   </div>
                   <div className="flex-fill">
                     <div className="d-flex justify-content-between gap-2">
-                      <p className="mb-0 fw-medium fs-5">Nirmal GC</p>
+                      <p
+                        className="mb-0 fw-medium  "
+                        style={{ fontSize: "18px" }}
+                      >
+                        Nirmal GC
+                      </p>
                       <small className="mb-0 text-muted">10:00 AM</small>
                     </div>
-                    <p className="mb-0 fs-6 text-muted">
+                    <p
+                      className="mb-0  text-muted"
+                      style={{ fontSize: "14px" }}
+                    >
+                      <span style={{ color: "#0D99FF", fontSize: "14px" }}>
+                        @Manish
+                      </span>{" "}
+                      How are you?
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="card border-0">
+                <div className="card-body p-2 d-flex align-items-center gap-2">
+                  <div style={{ width: "50px", height: "50px" }}>
+                    <img
+                      src="../img/user-1.jpg"
+                      alt=""
+                      className="img-fluid object-fit-cover rounded-circle h-100 w-100"
+                    />
+                  </div>
+                  <div className="flex-fill">
+                    <div className="d-flex justify-content-between gap-2">
+                      <p
+                        className="mb-0 fw-medium "
+                        style={{ fontSize: "18px" }}
+                      >
+                        Nirmal GC
+                      </p>
+                      <small className="mb-0 text-muted">10:00 AM</small>
+                    </div>
+                    <p
+                      className="mb-0   text-muted"
+                      style={{ fontSize: "14px" }}
+                    >
                       <span style={{ color: "#0D99FF" }}>@Manish</span> How are
                       you?
                     </p>
@@ -694,32 +889,15 @@ const Dashboard = () => {
                   </div>
                   <div className="flex-fill">
                     <div className="d-flex justify-content-between gap-2">
-                      <p className="mb-0 fw-medium fs-5">Nirmal GC</p>
+                      <p
+                        className="mb-0 fw-medium  "
+                        style={{ fontSize: "18px" }}
+                      >
+                        Nirmal GC
+                      </p>
                       <small className="mb-0 text-muted">10:00 AM</small>
                     </div>
-                    <p className="mb-0 fs-6 text-muted">
-                      <span style={{ color: "#0D99FF" }}>@Manish</span> How are
-                      you?
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="card border-0">
-                <div className="card-body p-2 d-flex align-items-center gap-2">
-                  <div style={{ width: "50px", height: "50px" }}>
-                    <img
-                      src="../img/user-1.jpg"
-                      alt=""
-                      className="img-fluid object-fit-cover rounded-circle h-100 w-100"
-                    />
-                  </div>
-                  <div className="flex-fill">
-                    <div className="d-flex justify-content-between gap-2">
-                      <p className="mb-0 fw-medium fs-5">Nirmal GC</p>
-                      <small className="mb-0 text-muted">10:00 AM</small>
-                    </div>
-                    <p className="mb-0 fs-6 text-muted">
+                    <p className="mb-0 text-muted" style={{ fontSize: "14px" }}>
                       <span style={{ color: "#0D99FF" }}>@Hello</span> How are
                       you?
                     </p>
@@ -728,7 +906,7 @@ const Dashboard = () => {
               </div>
               <div className="mt-auto mb-3">
                 <a
-                  href="#"
+                  href="/chats"
                   className="text-primary fs-5 border-0 border-bottom border-primary pb-1"
                 >
                   View All Chats <i className="bi bi-chevron-right"></i>
@@ -744,7 +922,10 @@ const Dashboard = () => {
           <div className="col-12 col-lg-6 col-xl-4 p-2 align-items-stretch">
             <div className="card p-3 flex-column gap-3 h-100 border-0">
               <div className="d-flex">
-                <p className="fs-5 fw-semibold m-0 px-3 py-2 text-white bg-warning rounded-1">
+                <p
+                  className="  fw-semibold m-0 px-3 py-2 text-white bg-warning rounded-1"
+                  style={{ fontSize: "18px" }}
+                >
                   Pending
                 </p>
               </div>
@@ -760,10 +941,30 @@ const Dashboard = () => {
                       style={{ width: "20px", height: "20px" }}
                     ></div>
                     <div className="d-flex flex-column">
-                      <p className="mb-1 fs-5 fw-medium">Cheap Flights Nepal</p>
-                      <p className="mb-1 fs-6 text-muted">Home Page</p>
-                      <p className="mb-1 fs-6 text-muted">Landing Page</p>
-                      <p className="mb-1 fs-6 text-muted">Landing Page</p>
+                      <p
+                        className="mb-1 fw-medium"
+                        style={{ fontSize: "18px" }}
+                      >
+                        Cheap Flights Nepal
+                      </p>
+                      <p
+                        className="mb-1 text-muted"
+                        style={{ fontSize: "16px" }}
+                      >
+                        Home Page
+                      </p>
+                      <p
+                        className="mb-1 text-muted"
+                        style={{ fontSize: "16px" }}
+                      >
+                        Landing Page
+                      </p>
+                      <p
+                        className="mb-1 text-muted"
+                        style={{ fontSize: "16px" }}
+                      >
+                        Landing Page
+                      </p>
                     </div>
                   </li>
                   <li className="d-flex gap-3 list-unstyled m-0">
@@ -772,10 +973,30 @@ const Dashboard = () => {
                       style={{ width: "20px", height: "20px" }}
                     ></div>
                     <div className="d-flex flex-column">
-                      <p className="mb-1 fs-5 fw-medium">Cheap Flights Nepal</p>
-                      <p className="mb-1 fs-6 text-muted">Home Page</p>
-                      <p className="mb-1 fs-6 text-muted">Landing Page</p>
-                      <p className="mb-1 fs-6 text-muted">Landing Page</p>
+                      <p
+                        className="mb-1 fw-medium"
+                        style={{ fontSize: "18px" }}
+                      >
+                        Cheap Flights Nepal
+                      </p>
+                      <p
+                        className="mb-1 text-muted"
+                        style={{ fontSize: "16px" }}
+                      >
+                        Home Page
+                      </p>
+                      <p
+                        className="mb-1 text-muted"
+                        style={{ fontSize: "16px" }}
+                      >
+                        Landing Page
+                      </p>
+                      <p
+                        className="mb-1 text-muted"
+                        style={{ fontSize: "16px" }}
+                      >
+                        Landing Page
+                      </p>
                     </div>
                   </li>
                 </ul>
@@ -785,7 +1006,10 @@ const Dashboard = () => {
           <div className="col-12 col-lg-6 col-xl-4 p-2 align-items-stretch">
             <div className="card p-3 flex-column gap-3 h-100 border-0">
               <div className="d-flex">
-                <p className="fs-5 fw-semibold m-0 px-3 py-2 text-white bg-progress rounded-1">
+                <p
+                  className="  fw-semibold m-0 px-3 py-2 text-white bg-progress rounded-1"
+                  style={{ fontSize: "18px" }}
+                >
                   In Progress
                 </p>
               </div>
@@ -801,10 +1025,30 @@ const Dashboard = () => {
                       style={{ width: "20px", height: "20px" }}
                     ></div>
                     <div className="d-flex flex-column">
-                      <p className="mb-1 fs-5 fw-medium">Cheap Flights Nepal</p>
-                      <p className="mb-1 fs-6 text-muted">Home Page</p>
-                      <p className="mb-1 fs-6 text-muted">Landing Page</p>
-                      <p className="mb-1 fs-6 text-muted">Landing Page</p>
+                      <p
+                        className="mb-1 fw-medium"
+                        style={{ fontSize: "18px" }}
+                      >
+                        Cheap Flights Nepal
+                      </p>
+                      <p
+                        className="mb-1 text-muted"
+                        style={{ fontSize: "16px" }}
+                      >
+                        Home Page
+                      </p>
+                      <p
+                        className="mb-1 text-muted"
+                        style={{ fontSize: "16px" }}
+                      >
+                        Landing Page
+                      </p>
+                      <p
+                        className="mb-1 text-muted"
+                        style={{ fontSize: "16px" }}
+                      >
+                        Landing Page
+                      </p>
                     </div>
                   </li>
                   <li className="d-flex gap-3 list-unstyled m-0">
@@ -813,10 +1057,30 @@ const Dashboard = () => {
                       style={{ width: "20px", height: "20px" }}
                     ></div>
                     <div className="d-flex flex-column">
-                      <p className="mb-1 fs-5 fw-medium">Cheap Flights Nepal</p>
-                      <p className="mb-1 fs-6 text-muted">Home Page</p>
-                      <p className="mb-1 fs-6 text-muted">Landing Page</p>
-                      <p className="mb-1 fs-6 text-muted">Landing Page</p>
+                      <p
+                        className="mb-1 fw-medium"
+                        style={{ fontSize: "18px" }}
+                      >
+                        Cheap Flights Nepal
+                      </p>
+                      <p
+                        className="mb-1 text-muted"
+                        style={{ fontSize: "16px" }}
+                      >
+                        Home Page
+                      </p>
+                      <p
+                        className="mb-1 text-muted"
+                        style={{ fontSize: "16px" }}
+                      >
+                        Landing Page
+                      </p>
+                      <p
+                        className="mb-1 text-muted"
+                        style={{ fontSize: "16px" }}
+                      >
+                        Landing Page
+                      </p>
                     </div>
                   </li>
                   <li className="d-flex gap-3 list-unstyled m-0">
@@ -825,10 +1089,30 @@ const Dashboard = () => {
                       style={{ width: "20px", height: "20px" }}
                     ></div>
                     <div className="d-flex flex-column">
-                      <p className="mb-1 fs-5 fw-medium">Cheap Flights Nepal</p>
-                      <p className="mb-1 fs-6 text-muted">Home Page</p>
-                      <p className="mb-1 fs-6 text-muted">Landing Page</p>
-                      <p className="mb-1 fs-6 text-muted">Landing Page</p>
+                      <p
+                        className="mb-1 fw-medium"
+                        style={{ fontSize: "18px" }}
+                      >
+                        Cheap Flights Nepal
+                      </p>
+                      <p
+                        className="mb-1 text-muted"
+                        style={{ fontSize: "16px" }}
+                      >
+                        Home Page
+                      </p>
+                      <p
+                        className="mb-1 text-muted"
+                        style={{ fontSize: "16px" }}
+                      >
+                        Landing Page
+                      </p>
+                      <p
+                        className="mb-1 text-muted"
+                        style={{ fontSize: "16px" }}
+                      >
+                        Landing Page
+                      </p>
                     </div>
                   </li>
                 </ul>
@@ -838,7 +1122,10 @@ const Dashboard = () => {
           <div className="col-12 col-lg-6 col-xl-4 p-2 align-items-stretch">
             <div className="card p-3 flex-column gap-3 h-100 border-0">
               <div className="d-flex">
-                <p className="fs-5 fw-semibold m-0 px-3 py-2 text-white bg-primary rounded-1">
+                <p
+                  className="  fw-semibold m-0 px-3 py-2 text-white bg-primary rounded-1"
+                  style={{ fontSize: "18px" }}
+                >
                   Completed
                 </p>
               </div>
@@ -854,10 +1141,30 @@ const Dashboard = () => {
                       style={{ width: "20px", height: "20px" }}
                     ></div>
                     <div className="d-flex flex-column">
-                      <p className="mb-1 fs-5 fw-medium">Cheap Flights Nepal</p>
-                      <p className="mb-1 fs-6 text-muted">Home Page</p>
-                      <p className="mb-1 fs-6 text-muted">Landing Page</p>
-                      <p className="mb-1 fs-6 text-muted">Landing Page</p>
+                      <p
+                        className="mb-1  fw-medium"
+                        style={{ fontSize: "18px" }}
+                      >
+                        Cheap Flights Nepal
+                      </p>
+                      <p
+                        className="mb-1  text-muted"
+                        style={{ fontSize: "16px" }}
+                      >
+                        Home Page
+                      </p>
+                      <p
+                        className="mb-1  text-muted"
+                        style={{ fontSize: "16px" }}
+                      >
+                        Landing Page
+                      </p>
+                      <p
+                        className="mb-1 text-muted"
+                        style={{ fontSize: "16px" }}
+                      >
+                        Landing Page
+                      </p>
                     </div>
                   </li>
                   <li className="d-flex gap-3 list-unstyled m-0">
@@ -866,10 +1173,30 @@ const Dashboard = () => {
                       style={{ width: "20px", height: "20px" }}
                     ></div>
                     <div className="d-flex flex-column">
-                      <p className="mb-1 fs-5 fw-medium">Cheap Flights Nepal</p>
-                      <p className="mb-1 fs-6 text-muted">Home Page</p>
-                      <p className="mb-1 fs-6 text-muted">Landing Page</p>
-                      <p className="mb-1 fs-6 text-muted">Landing Page</p>
+                      <p
+                        className="mb-1 fw-medium"
+                        style={{ fontSize: "18px" }}
+                      >
+                        Cheap Flights Nepal
+                      </p>
+                      <p
+                        className="mb-1 text-muted"
+                        style={{ fontSize: "16px" }}
+                      >
+                        Home Page
+                      </p>
+                      <p
+                        className="mb-1 text-muted"
+                        style={{ fontSize: "16px" }}
+                      >
+                        Landing Page
+                      </p>
+                      <p
+                        className="mb-1 text-muted"
+                        style={{ fontSize: "16px" }}
+                      >
+                        Landing Page
+                      </p>
                     </div>
                   </li>
                   <li className="d-flex gap-3 list-unstyledm-0">
@@ -878,10 +1205,30 @@ const Dashboard = () => {
                       style={{ width: "20px", height: "20px" }}
                     ></div>
                     <div className="d-flex flex-column">
-                      <p className="mb-1 fs-5 fw-medium">Cheap Flights Nepal</p>
-                      <p className="mb-1 fs-6 text-muted">Home Page</p>
-                      <p className="mb-1 fs-6 text-muted">Landing Page</p>
-                      <p className="mb-1 fs-6 text-muted">Landing Page</p>
+                      <p
+                        className="mb-1 fw-medium"
+                        style={{ fontSize: "18px" }}
+                      >
+                        Cheap Flights Nepal
+                      </p>
+                      <p
+                        className="mb-1 text-muted"
+                        style={{ fontSize: "16px" }}
+                      >
+                        Home Page
+                      </p>
+                      <p
+                        className="mb-1 text-muted"
+                        style={{ fontSize: "16px" }}
+                      >
+                        Landing Page
+                      </p>
+                      <p
+                        className="mb-1 text-muted"
+                        style={{ fontSize: "16px" }}
+                      >
+                        Landing Page
+                      </p>
                     </div>
                   </li>
                   <li className="d-flex gap-3 list-unstyled m-0">
@@ -890,10 +1237,30 @@ const Dashboard = () => {
                       style={{ width: "20px", height: "20px" }}
                     ></div>
                     <div className="d-flex flex-column">
-                      <p className="mb-1 fs-5 fw-medium">Cheap Flights Nepal</p>
-                      <p className="mb-1 fs-6 text-muted">Home Page</p>
-                      <p className="mb-1 fs-6 text-muted">Landing Page</p>
-                      <p className="mb-1 fs-6 text-muted">Landing Page</p>
+                      <p
+                        className="mb-1 fw-medium"
+                        style={{ fontSize: "18px" }}
+                      >
+                        Cheap Flights Nepal
+                      </p>
+                      <p
+                        className="mb-1 text-muted"
+                        style={{ fontSize: "16px" }}
+                      >
+                        Home Page
+                      </p>
+                      <p
+                        className="mb-1 text-muted"
+                        style={{ fontSize: "16px" }}
+                      >
+                        Landing Page
+                      </p>
+                      <p
+                        className="mb-1 text-muted"
+                        style={{ fontSize: "16px" }}
+                      >
+                        Landing Page
+                      </p>
                     </div>
                   </li>
                 </ul>

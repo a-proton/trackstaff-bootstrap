@@ -516,3 +516,44 @@ tbody tr {
 .bi-chevron-right::before {
   margin-top: 6px;
 }
+.custom-card {
+  transition: transform 0.3s ease-in;
+}
+.custom-card:hover {
+  transform: scale(1.03);
+}
+/* Sidebar styles */
+.hover-bg-light:hover {
+  background-color: #f8f9fa !important;
+}
+
+/* Adjust main content to account for sidebar */
+@media (min-width: 768px) {
+  .employee-main-content {
+    margin-left: 250px;
+  }
+}
+
+/* Ensure sidebar scrolls properly */
+.sidebar-scroll {
+  max-height: calc(100vh - 70px);
+  overflow-y: auto;
+}
+
+/* Active nav item styles */
+.nav-link.active {
+  background-color: var(--bs-primary) !important;
+  color: white !important;
+}
+
+/* Smooth transitions for nav items */
+.nav-link {
+  transition: all 0.2s ease-in-out;
+  text-decoration: none;
+  border-radius: 0.375rem;
+}
+
+.nav-link:hover {
+  background-color: #f8f9fa;
+  text-decoration: none;
+}

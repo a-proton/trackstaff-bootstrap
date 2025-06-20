@@ -7,7 +7,9 @@ const AdminLayout = () => {
     <div>
       <NavbarComponent />
       <Menu />
-      <Outlet />
+      <div style={{ backgroundColor: "#F5F6FA" }}>
+        <Outlet />
+      </div>
     </div>
   );
 };

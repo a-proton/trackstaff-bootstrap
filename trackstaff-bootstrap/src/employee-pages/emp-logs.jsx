@@ -3,7 +3,7 @@ import React from "react";
 const EmpLogs = () => {
   return (
     <main className="p-2">
-      <div className="px-2">
+      <div className="px-2 pl-2">
         {/* <!-- Logs Heading Start --> */}
         <div className="row">
           <div className="col-12">

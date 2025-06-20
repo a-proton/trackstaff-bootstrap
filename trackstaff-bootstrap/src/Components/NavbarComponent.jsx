@@ -1,15 +1,43 @@
 // NavbarComponent.jsx
 import React from "react";
-import { Link, useLocation } from "react-router-dom";
-import { Navbar, Nav, Container, NavDropdown } from "react-bootstrap";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+
+import { useAuth } from "../Contexts/AuthContext"; // Adjust path as needed
 import MenuItems from "./MenuItems";
+import { Button } from "bootstrap";
 
 const NavbarComponent = () => {
   const location = useLocation();
+  const navigate = useNavigate();
+  const { logout, user } = useAuth(); // Get logout function and user from AuthContext
 
   // Helper function to check if current route is active
   const isActive = (path) => {
     return location.pathname === path;
+  };
+
+  // Handle logout functionality with role-based redirect
+  const handleLogout = async () => {
+    try {
+      // Optional: Show confirmation dialog
+      if (window.confirm("Are you sure you want to logout?")) {
+        await logout();
+
+        // Redirect based on user role
+        if (
+          user?.role?.toLowerCase() === "admin" ||
+          user?.role?.toLowerCase() === "administrator"
+        ) {
+          navigate("/adminlogin");
+        } else {
+          navigate("/employeelogin"); // or whatever your employee login route is
+        }
+      }
+    } catch (error) {
+      console.error("Logout error:", error);
+
+      navigate("/employeelogin");
+    }
   };
 
   return (
@@ -164,6 +192,7 @@ const NavbarComponent = () => {
                 </ul>
               </div>
 
+              {/* Mobile User Dropdown */}
               <div className="d-flex d-md-none align-items-center gap-1 dropdown">
                 <a
                   href="#"
@@ -201,10 +230,10 @@ const NavbarComponent = () => {
                       />
                       <div className="d-flex flex-column justify-content-center px-3">
                         <h6 className="fw-bold p-0 m-0 text-nowrap">
-                          Manish Shrestha
+                          {user?.name || "Manish Shrestha"}
                         </h6>
                         <p className="text-muted p-0 m-0 text-nowrap">
-                          Employee
+                          {user?.role || "Employee"}
                         </p>
                       </div>
                     </div>
@@ -227,16 +256,26 @@ const NavbarComponent = () => {
                     </Link>
                   </li>
                   <li>
-                    <Link className="dropdown-item" to="/logout">
-                      <div className="d-flex align-items-center gap-2">
-                        <i className="bi bi-box-arrow-right fs-5"></i>
-                        <span>Logout</span>
+                    <button
+                      className="dropdown-item btn btn-link text-start p-0"
+                      onClick={handleLogout}
+                      style={{
+                        border: "none",
+                        background: "none",
+                        width: "100%",
+                        textDecoration: "none",
+                      }}
+                    >
+                      <div className="d-flex align-items-center gap-2 p-2">
+                        <i className="bi bi-box-arrow-right fs-5 text-danger"></i>
+                        <span className="text-danger">Logout</span>
                       </div>
-                    </Link>
+                    </button>
                   </li>
                 </ul>
               </div>
 
+              {/* Desktop User Info and Dropdown */}
               <div className="d-none d-md-flex align-items-center gap-1">
                 <div
                   className="d-flex align-items-center gap-1"
@@ -263,9 +302,11 @@ const NavbarComponent = () => {
 
                   <div className="d-flex flex-column justify-content-center px-3">
                     <h6 className="fw-bold p-0 m-0 text-nowrap">
-                      Manish Shrestha
+                      {user?.name || "Manish Shrestha"}
                     </h6>
-                    <p className="text-muted p-0 m-0 text-nowrap">Employee</p>
+                    <p className="text-muted p-0 m-0 text-nowrap">
+                      {user?.role || "Employee"}
+                    </p>
                   </div>
                 </div>
                 <div

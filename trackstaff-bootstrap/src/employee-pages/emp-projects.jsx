@@ -3,7 +3,7 @@ import React from "react";
 const EmpProjects = () => {
   return (
     <main className="p-2">
-      <div className="px-2 bg-white p-3 rounded-3">
+      <div className="px-2 pl-2 bg-white p-3 rounded-3">
         {/* <!-- Projects Heading Start --> */}
         <div className="row mb-3 justify-content-between align-items-center">
           <div className="col">
