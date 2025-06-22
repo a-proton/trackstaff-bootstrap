@@ -2,7 +2,7 @@ import React from "react";
 
 const Tasks = () => {
   return (
-    <main className="p-2">
+    <main className="p-3">
       <div className="px-2 bg-white p-3 rounded-3">
         {/* <!-- Employee Tasks Heading Start --> */}
         <div className="row">
@@ -403,7 +403,7 @@ const Tasks = () => {
                 <td>
                   <div
                     className="dropdown position-static"
-                    style={{ cursor: " pointer;" }}
+                    style={{ cursor: " pointer" }}
                   >
                     <i
                       className="bi bi-three-dots-vertical"

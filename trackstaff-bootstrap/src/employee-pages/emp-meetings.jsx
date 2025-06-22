@@ -2,7 +2,7 @@ import React from "react";
 
 const EmpMeetings = () => {
   return (
-    <main className="p-2">
+    <main className="p-3">
       <div className="p-3 bg-white rounded-3">
         {/* <!-- My Tasks Heading Start --> */}
         <div className="row mb-3 justify-content-between align-items-center">

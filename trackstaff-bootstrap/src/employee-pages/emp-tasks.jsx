@@ -2,7 +2,7 @@ import React from "react";
 
 const EmpTasks = () => {
   return (
-    <main className="p-2">
+    <main className="p-3">
       <div className="px-2 pl-2 bg-white p-3 rounded-3">
         {/* <!-- My Tasks Heading Start --> */}
         <div className="row">

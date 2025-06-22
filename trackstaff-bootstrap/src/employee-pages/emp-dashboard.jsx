@@ -2,13 +2,14 @@ import React from "react";
 import { useEffect } from "react";
 import { useState } from "react";
 import "../empstyle.css";
+
 const EmpDashboard = () => {
   const [currentTime, setCurrentTime] = useState(new Date());
   const [isCheckedIn, setIsCheckedIn] = useState(false);
   const [hasTimeBeenChanged, setHasTimeBeenChanged] = useState(false);
-  // const [startDate, setStartDate] = useState("");
   const [dueDate, setDueDate] = useState("");
   const [checkInDate, setCheckInDate] = useState("");
+  const [checkInTime, setCheckInTime] = useState("");
 
   const handleDueDateChange = (e) => {
     if (!hasTimeBeenChanged) {
@@ -16,6 +17,27 @@ const EmpDashboard = () => {
       setHasTimeBeenChanged(true);
     }
   };
+
+  const handleTimeChange = (e) => {
+    if (!hasTimeBeenChanged) {
+      setCheckInTime(e.target.value);
+      setHasTimeBeenChanged(true);
+    }
+  };
+
+  const handleSaveAttendance = () => {
+    if (isCheckedIn) {
+      // Check out
+      setIsCheckedIn(false);
+    } else {
+      // Check in
+      setIsCheckedIn(true);
+    }
+    // Reset the time change flag and clear time for next use
+    setHasTimeBeenChanged(false);
+    setCheckInTime("");
+  };
+
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentTime(new Date());
@@ -27,6 +49,13 @@ const EmpDashboard = () => {
     const today = new Date().toISOString().split("T")[0];
     setCheckInDate(today);
   }, []);
+
+  useEffect(() => {
+    const now = new Date();
+    const currentTime = now.toTimeString().slice(0, 5); // Format: HH:MM
+    setCheckInTime(currentTime);
+  }, [isCheckedIn]); // <- update whenever check-in/check-out status changes
+
   const formatTime = (date) => {
     return date
       .toLocaleTimeString("en-US", {
@@ -104,7 +133,7 @@ const EmpDashboard = () => {
                       <div className="modal-header pb-0 border-bottom-0">
                         <div>
                           <h5 className="modal-title" id="addTaskModalLabel">
-                            Add Attendence
+                            {isCheckedIn ? "Check Out" : "Add Attendance"}
                           </h5>
                         </div>
                         <button
@@ -130,21 +159,23 @@ const EmpDashboard = () => {
                             />
                           </div>
                           <div className="mb-3">
-                            <label hmtlFor="checkInTime" className="form-label">
+                            <label htmlFor="checkInTime" className="form-label">
                               TIME
                             </label>
                             <input
+                              required
                               type="time"
                               className="form-control"
                               id="checkInTime"
                               aria-label="Time"
-                              onChange={handleDueDateChange}
-                              disabled={hasTimeBeenChanged}
-                            />{" "}
+                              value={checkInTime}
+                              onChange={handleTimeChange}
+                              disabled={hasTimeBeenChanged || isCheckedIn} // ← updated this line
+                            />
                           </div>
                           <div className="mb-3">
                             <label
-                              hmtlFor="task-description"
+                              htmlFor="task-description"
                               className="form-label"
                             >
                               REMARKS
@@ -171,13 +202,9 @@ const EmpDashboard = () => {
                           type="button"
                           className="btn btn-primary px-4"
                           data-bs-dismiss="modal"
-                          onClick={() => {
-                            setIsCheckedIn(true);
-                            setShowAlert(true);
-                            setTimeout(() => setShowAlert(false), 3000);
-                          }}
+                          onClick={handleSaveAttendance}
                         >
-                          Save Attendance
+                          {isCheckedIn ? "Save Check Out" : "Save Attendance"}
                         </button>
                       </div>
                     </div>
@@ -186,7 +213,6 @@ const EmpDashboard = () => {
               </div>
             </div>
           </div>
-          {/* <!-- Attendance Tracker End --> */}
 
           {/* <!-- Productivity Monitor Start --> */}
           <div className="col-12 col-xl-8 d-flex align-items-stretch">
