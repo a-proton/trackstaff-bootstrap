@@ -43,7 +43,7 @@ const AddEmployee = () => {
 
               <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 w-100 g-3 pt-3">
                 <div className="col">
-                  <label for="fullName" className="form-label">
+                  <label htmlFor="fullName" className="form-label">
                     Full Name<span className="text-danger">*</span>
                   </label>
                   <input
@@ -55,7 +55,7 @@ const AddEmployee = () => {
                   />
                 </div>
                 <div className="col">
-                  <label for="shiftType" className="form-label">
+                  <label htmlFor="shiftType" className="form-label">
                     Shift Type<span className="text-danger">*</span>
                   </label>
                   <select
@@ -70,7 +70,7 @@ const AddEmployee = () => {
                   </select>
                 </div>
                 <div className="col">
-                  <label for="role" className="form-label">
+                  <label htmlFor="role" className="form-label">
                     Role<span className="text-danger">*</span>
                   </label>
                   <select name="" id="role" className="form-select" required>
@@ -80,7 +80,7 @@ const AddEmployee = () => {
                   </select>
                 </div>
                 <div className="col">
-                  <label for="email" className="form-label">
+                  <label htmlFor="email" className="form-label">
                     Email Address<span className="text-danger">*</span>
                   </label>
                   <input
@@ -92,7 +92,7 @@ const AddEmployee = () => {
                   />
                 </div>
                 <div className="col">
-                  <label for="phoneNumber" className="form-label">
+                  <label htmlFor="phoneNumber" className="form-label">
                     Phone Number<span className="text-danger">*</span>
                   </label>
                   <input
@@ -104,7 +104,7 @@ const AddEmployee = () => {
                   />
                 </div>
                 <div className="col">
-                  <label for="address" className="form-label">
+                  <label htmlFor="address" className="form-label">
                     Address<span className="text-danger">*</span>
                   </label>
                   <input
@@ -116,7 +116,7 @@ const AddEmployee = () => {
                   />
                 </div>
                 <div className="col">
-                  <label for="github" className="form-label">
+                  <label htmlFor="github" className="form-label">
                     GitHub
                   </label>
                   <input
@@ -127,7 +127,7 @@ const AddEmployee = () => {
                   />
                 </div>
                 <div className="col">
-                  <label for="linkedin" className="form-label">
+                  <label htmlFor="linkedin" className="form-label">
                     LinkedIn
                   </label>
                   <input
@@ -138,7 +138,7 @@ const AddEmployee = () => {
                   />
                 </div>
                 <div className="col">
-                  <label for="facebook" className="form-label">
+                  <label htmlFor="facebook" className="form-label">
                     Facebook
                   </label>
                   <input
@@ -149,7 +149,7 @@ const AddEmployee = () => {
                   />
                 </div>
                 <div className="col">
-                  <label for="status" className="form-label">
+                  <label htmlFor="status" className="form-label">
                     Status<span className="text-danger">*</span>
                   </label>
                   <select name="" id="status" className="form-select" required>
@@ -159,7 +159,7 @@ const AddEmployee = () => {
                   </select>
                 </div>
                 <div className="col">
-                  <label for="workingHours" className="form-label">
+                  <label htmlFor="workingHours" className="form-label">
                     Working Hours<span className="text-danger">*</span>
                   </label>
                   <div className="d-flex gap-2 align-items-center">
@@ -181,7 +181,7 @@ const AddEmployee = () => {
                   </div>
                 </div>
                 <div>
-                  <label for="resumeUpload" className="form-label">
+                  <label htmlFor="resumeUpload" className="form-label">
                     Resume Upload<span className="text-danger">*</span>
                   </label>
                   <input
@@ -192,7 +192,7 @@ const AddEmployee = () => {
                   />
                 </div>
                 <div>
-                  <label for="jobContract" className="form-label">
+                  <label htmlFor="jobContract" className="form-label">
                     Job Contract<span className="text-danger">*</span>
                   </label>
                   <input

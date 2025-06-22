@@ -1,6 +1,16 @@
 import React from "react";
-
+import { useState } from "react";
+import ScheduleMeetingModal from "../Components/Modals/scheduleMeetingModal";
 const EmpMeetings = () => {
+  const [scheduleModalOpen, setScheduleModalOpen] = useState(false);
+
+  const handleCreateMeeting = (meetingData) => {
+    console.log("Meeting created:", meetingData);
+    setScheduleModalOpen(false);
+  };
+  const openScheduleModal = () => {
+    setScheduleModalOpen(true);
+  };
   return (
     <main className="p-3">
       <div className="p-3 bg-white rounded-3">
@@ -12,131 +22,18 @@ const EmpMeetings = () => {
           </div>
           <div className="col text-end">
             <button
-              className="btn btn-primary w-auto text-nowrap"
-              data-bs-toggle="modal"
-              data-bs-target="#addMeetingModal"
+              className="btn btn-primary  "
+              style={{ fontSize: "16px" }}
+              onClick={openScheduleModal}
             >
-              <i className="bi bi-plus fs-5"></i> Schedule Meeting
+              <i className="bi bi-plus"></i> Add Meeting
             </button>
             {/* <!-- Add Meeting Modal --> */}
-            <div
-              className="modal fade text-start"
-              id="addMeetingModal"
-              tabindex="-1"
-              aria-labelledby="addMeetingModalLabel"
-              aria-hidden="true"
-            >
-              <div className="modal-dialog">
-                <div className="modal-content">
-                  <div className="modal-header pb-0 border-bottom-0 align-items-start">
-                    <div>
-                      <h5 className="modal-title" id="addMeetingModalLabel">
-                        Schedule New Meeting
-                      </h5>
-                      <p className="text-muted">
-                        Fill the form below to schedule a new meeting.
-                      </p>
-                    </div>
-                    <button
-                      type="button"
-                      className="btn-close"
-                      data-bs-dismiss="modal"
-                      aria-label="Close"
-                    ></button>
-                  </div>
-                  <div className="modal-body">
-                    <form>
-                      <div className="mb-3">
-                        <label for="meeting-title" className="form-label">
-                          Meeting Title
-                        </label>
-                        <input
-                          type="text"
-                          className="form-control"
-                          id="meeting-title"
-                          placeholder="Enter meeting title..."
-                          aria-label="Meeting Title"
-                        />
-                      </div>
-                      <div className="row">
-                        <div className="col-6">
-                          <div className="mb-3">
-                            <label for="task-start-date" className="form-label">
-                              Date
-                            </label>
-                            <input
-                              type="date"
-                              className="form-control text-dark-emphasis"
-                              id="task-start-date"
-                              aria-label="Task Start Date"
-                            />
-                          </div>
-                        </div>
-                        <div className="col-6">
-                          <div className="mb-3">
-                            <label for="task-end-date" className="form-label">
-                              Time
-                            </label>
-                            <input
-                              type="time"
-                              className="form-control text-dark-emphasis"
-                              id="task-due-date"
-                              aria-label="Task End Date"
-                            />
-                          </div>
-                        </div>
-                        <div className="row">
-                          <div className="col">
-                            <div className="mb-3">
-                              <label
-                                for="task-assigned-to"
-                                className="form-label"
-                              >
-                                Assigned To
-                              </label>
-                              <input
-                                type="search"
-                                className="form-control"
-                                id="task-assigned-to"
-                                placeholder="Search user..."
-                                aria-label="Assigned To"
-                              />
-                            </div>
-                          </div>
-                        </div>
-                        <div className="">
-                          <label
-                            for="meeting-description"
-                            className="form-label"
-                          >
-                            Meeting Agenda
-                          </label>
-                          <textarea
-                            className="form-control"
-                            id="task-description"
-                            rows="3"
-                            placeholder="Enter meeting agenda..."
-                            aria-label="Meeting Agenda"
-                          ></textarea>
-                        </div>
-                      </div>
-                    </form>
-                  </div>
-                  <div className="modal-footer border-top-0">
-                    <button
-                      type="button"
-                      className="btn border px-4"
-                      data-bs-dismiss="modal"
-                    >
-                      Cancel
-                    </button>
-                    <button type="submit" className="btn btn-primary px-4">
-                      Schedule Meeting
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <ScheduleMeetingModal
+              isOpen={scheduleModalOpen}
+              onClose={() => setScheduleModalOpen(false)}
+              onSubmit={handleCreateMeeting}
+            />
           </div>
         </div>
         {/* <!-- My Tasks Heading End --> */}

@@ -1,6 +1,16 @@
-import React from "react";
+import { useState } from "react";
+import AddTaskModal from "../Components/Modals/taskModal";
 
 const EmpTasks = () => {
+  const [modalOpen, setModalOpen] = useState(false);
+  const handleCreateTask = () => {
+    alert("Task Created!");
+    setModalOpen(false);
+  };
+
+  const openModal = () => {
+    setModalOpen(true);
+  };
   return (
     <main className="p-3">
       <div className="px-2 pl-2 bg-white p-3 rounded-3">
@@ -65,163 +75,17 @@ const EmpTasks = () => {
             className="btn btn-primary"
             data-bs-toggle="modal"
             data-bs-target="#addTaskModal"
+            onClick={openModal}
           >
             <i className="bi bi-plus fs-5"></i> Add Task
           </button>
 
           {/* <!-- Add Task Modal --> */}
-          <div
-            className="modal fade"
-            id="addTaskModal"
-            tabindex="-1"
-            aria-labelledby="addTaskModalLabel"
-            aria-hidden="true"
-          >
-            <div className="modal-dialog">
-              <div className="modal-content">
-                <div className="modal-header pb-0 border-bottom-0">
-                  <div>
-                    <h5 className="modal-title" id="addTaskModalLabel">
-                      Create New Task
-                    </h5>
-                    <p className="text-muted">
-                      Fill the form below to create a new task.
-                    </p>
-                  </div>
-                  <button
-                    type="button"
-                    className="btn-close"
-                    data-bs-dismiss="modal"
-                    aria-label="Close"
-                  ></button>
-                </div>
-                <div className="modal-body">
-                  <form>
-                    <div className="mb-3">
-                      <label for="task-status" className="form-label">
-                        Project
-                      </label>
-                      <select
-                        className="form-select text-dark-emphasis"
-                        id="task-status"
-                        aria-label="Task Status"
-                      >
-                        <option selected="" disabled="">
-                          Select Project
-                        </option>
-                        <option value="project1">Project 1</option>
-                        <option value="project2">Project 2</option>
-                        <option value="project3">Project 3</option>
-                        <option value="project4">Project 4</option>
-                      </select>
-                    </div>
-
-                    <div className="mb-3">
-                      <label for="task-title" className="form-label">
-                        Task Title
-                      </label>
-                      <input
-                        type="search"
-                        className="form-control"
-                        id="task-title"
-                        placeholder="Search by task title..."
-                        aria-label="Task Title"
-                      />
-                    </div>
-                    <div className="mb-3">
-                      <label for="task-description" className="form-label">
-                        Sub Task
-                      </label>
-                      <textarea
-                        className="form-control"
-                        id="task-description"
-                        rows="3"
-                        placeholder="Enter sub task one per line..."
-                        aria-label="Sub Task"
-                      ></textarea>
-                    </div>
-                    <div className="row">
-                      <div className="col-6">
-                        <div className="mb-3">
-                          <label for="task-assigned-to" className="form-label">
-                            Assigned To
-                          </label>
-                          <input
-                            type="search"
-                            className="form-control"
-                            id="tasks-assigned-to"
-                            placeholder="Search user..."
-                            aria-label="Assigned To"
-                          />
-                        </div>
-                      </div>
-                      <div className="col-6">
-                        <div className="mb-3">
-                          <label for="task-priority" className="form-label">
-                            Status
-                          </label>
-                          <select
-                            className="form-select text-dark-emphasis"
-                            id="task-priority"
-                            aria-label="Task Priority"
-                          >
-                            <option selected="" disabled="">
-                              Pending
-                            </option>
-                            {/* <!-- <option value="pending">Pending</option> --> */}
-                            <option value="progress">Progress</option>
-                            <option value="completed">Completed</option>
-                            <option value="cancelled">Cancelled</option>
-                          </select>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div className="row">
-                      <div className="col-6">
-                        <div className="mb-3">
-                          <label for="task-start-date" className="form-label">
-                            Start Date
-                          </label>
-                          <input
-                            type="date"
-                            className="form-control text-dark-emphasis"
-                            id="task-start-date"
-                            aria-label="Task Start Date"
-                          />
-                        </div>
-                      </div>
-                      <div className="col-6">
-                        <div className="mb-3">
-                          <label for="task-end-date" className="form-label">
-                            Due Date
-                          </label>
-                          <input
-                            type="date"
-                            className="form-control text-dark-emphasis"
-                            id="task-due-date"
-                            aria-label="Task End Date"
-                          />
-                        </div>
-                      </div>
-                    </div>
-                  </form>
-                </div>
-                <div className="modal-footer border-top-0">
-                  <button
-                    type="button"
-                    className="btn border px-4"
-                    data-bs-dismiss="modal"
-                  >
-                    Cancel
-                  </button>
-                  <button type="submit" className="btn btn-primary px-4">
-                    Create Task
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
+          <AddTaskModal
+            isOpen={modalOpen}
+            onClose={() => setModalOpen(false)}
+            onSubmit={handleCreateTask}
+          />
         </div>
 
         {/* <!-- Search and Date Filters --> */}

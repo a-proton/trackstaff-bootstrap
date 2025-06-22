@@ -1,6 +1,18 @@
 import React from "react";
+import { useState } from "react";
+import AddProjectModal from "../Components/Modals/AddProjectModal";
 
 const Projects = () => {
+  const [modalOpen, setModalOpen] = useState(false);
+
+  const handleCreateProject = () => {
+    alert("Project Created!");
+    setModalOpen(false);
+  };
+
+  const openModal = () => {
+    setModalOpen(true);
+  };
   return (
     <main className="p-3">
       <div className="px-2 bg-white p-3 rounded-3">
@@ -11,191 +23,15 @@ const Projects = () => {
             {/* <!-- <p  className="">Track your work hours and attendance</p> --> */}
           </div>
           <div className="col text-end">
-            <button
-              className="btn btn-primary w-auto"
-              data-bs-toggle="modal"
-              data-bs-target="#addProjectModal"
-            >
+            <button className="btn btn-primary" onClick={openModal}>
               <i className="bi bi-plus fs-5"></i> Add Project
             </button>
 
-            {/* <!-- Add Project Modal --> */}
-            <div
-              className="modal fade text-start"
-              id="addProjectModal"
-              tabindex="-1"
-              aria-labelledby="addProjectModalLabel"
-              aria-hidden="true"
-            >
-              <div className="modal-dialog">
-                <div className="modal-content">
-                  <div className="modal-header pb-0 border-bottom-0">
-                    <div>
-                      <h5 className="modal-title" id="addProjectModalLabel">
-                        Add New Project
-                      </h5>
-                      <p className="text-muted">
-                        Fill the form below to add a new project.
-                      </p>
-                    </div>
-                    <button
-                      type="button"
-                      className="btn-close"
-                      data-bs-dismiss="modal"
-                      aria-label="Close"
-                    ></button>
-                  </div>
-                  <div className="modal-body">
-                    <form>
-                      <div className="mb-3">
-                        <label for="task-title" className="form-label">
-                          Project Title
-                        </label>
-                        <input
-                          type="search"
-                          className="form-control"
-                          id="task-title"
-                          placeholder="Search by project title..."
-                          aria-label="Project Title"
-                        />
-                      </div>
-                      <div className="mb-3">
-                        <label for="task-description" className="form-label">
-                          Description
-                        </label>
-                        <textarea
-                          className="form-control"
-                          id="task-description"
-                          rows="3"
-                          placeholder="Enter project description..."
-                          aria-label="Project Description"
-                        ></textarea>
-                      </div>
-                      <div className="row">
-                        <div className="col">
-                          <div className="mb-3">
-                            <label for="assignees1" className="form-label">
-                              Assigned To
-                            </label>
-                            <div className="multi-user-container">
-                              <label
-                                for="assignees1"
-                                className="multi-user-label"
-                              ></label>
-                              <div className="tag-input" tabindex="0">
-                                <div
-                                  id="assignees1"
-                                  className="tags-container"
-                                ></div>
-                                <input
-                                  type="text"
-                                  className="user-search-input"
-                                  list="datalist-assignees1"
-                                  placeholder="Search user..."
-                                />
-                              </div>
-                              <datalist id="datalist-assignees1">
-                                <option
-                                  value="Surya Poudel"
-                                  data-user-id="001"
-                                  data-role="Admin"
-                                ></option>
-                                <option
-                                  value="Manish Shrestha"
-                                  data-user-id="002"
-                                  data-role="Developer"
-                                ></option>
-                                <option
-                                  value="Kabita Subedi"
-                                  data-user-id="003"
-                                  data-role="Designer"
-                                ></option>
-                                <option
-                                  value="Sangam Giri"
-                                  data-user-id="004"
-                                  data-role="Developer"
-                                ></option>
-                                <option
-                                  value="Nirmal GC"
-                                  data-user-id="005"
-                                  data-role="Tester"
-                                ></option>
-                                <option
-                                  value="Susmita Poudel"
-                                  data-user-id="006"
-                                  data-role="Content Writer"
-                                ></option>
-                                <option
-                                  value="Rohan GC"
-                                  data-user-id="007"
-                                  data-role="Developer"
-                                ></option>
-                                <option
-                                  value="Bisai Chhetri"
-                                  data-user-id="008"
-                                  data-role="Designer"
-                                ></option>
-                                <option
-                                  value="Bishwo Raj Parajuli"
-                                  data-user-id="009"
-                                  data-role="Manager"
-                                ></option>
-                                <option
-                                  value="Xitij Shrestha"
-                                  data-user-id="010"
-                                  data-role="Intern"
-                                ></option>
-                              </datalist>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-
-                      <div className="row">
-                        <div className="col-6">
-                          <div className="mb-3">
-                            <label for="task-start-date" className="form-label">
-                              Start Date
-                            </label>
-                            <input
-                              type="date"
-                              className="form-control text-dark-emphasis"
-                              id="task-start-date"
-                              aria-label="Task Start Date"
-                            />
-                          </div>
-                        </div>
-                        <div className="col-6">
-                          <div className="mb-3">
-                            <label for="task-end-date" className="form-label">
-                              Due Date
-                            </label>
-                            <input
-                              type="date"
-                              className="form-control text-dark-emphasis"
-                              id="task-due-date"
-                              aria-label="Task End Date"
-                            />
-                          </div>
-                        </div>
-                      </div>
-                    </form>
-                  </div>
-                  <div className="modal-footer border-top-0">
-                    <button
-                      type="button"
-                      className="btn border px-4"
-                      data-bs-dismiss="modal"
-                    >
-                      Cancel
-                    </button>
-                    <button type="submit" className="btn btn-primary px-4">
-                      Add Project
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <AddProjectModal
+              isOpen={modalOpen}
+              onClose={() => setModalOpen(false)}
+              onSubmit={handleCreateProject}
+            />
           </div>
         </div>
         {/* <!-- Projects Heading End --> */}

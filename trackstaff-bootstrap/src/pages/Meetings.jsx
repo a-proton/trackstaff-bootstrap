@@ -1,4 +1,19 @@
+import ScheduleMeetingModal from "../Components/Modals/scheduleMeetingModal";
+import { useState } from "react";
+
 export const Meetings = () => {
+  const [scheduleModal, setScheduleModal] = useState(false);
+  const [openModal, setOpenModal] = useState(false);
+
+  const handleCreateMeeting = (meetingData) => {
+    setScheduleModal(false);
+  };
+
+  const handleOpenModal = () => {
+    setScheduleModal(true);
+    setOpenModal(true);
+  };
+
   return (
     <main className="p-3">
       <div className="p-3 bg-white rounded-3">
@@ -12,138 +27,20 @@ export const Meetings = () => {
               className="btn btn-primary w-auto text-nowrap"
               data-bs-toggle="modal"
               data-bs-target="#addMeetingModal"
+              onClick={handleOpenModal}
             >
               <i className="bi bi-plus fs-5"></i> Schedule Meeting
             </button>
             {/* Add Meeting Modal */}
-            <div
-              className="modal fade text-start"
-              id="addMeetingModal"
-              tabIndex="-1"
-              aria-labelledby="addMeetingModalLabel"
-              aria-hidden="true"
-            >
-              <div className="modal-dialog">
-                <div className="modal-content">
-                  <div className="modal-header pb-0 border-bottom-0 align-items-start">
-                    <div>
-                      <h5 className="modal-title" id="addMeetingModalLabel">
-                        Schedule New Meeting
-                      </h5>
-                      <p className="text-muted">
-                        Fill the form below to schedule a new meeting.
-                      </p>
-                    </div>
-                    <button
-                      type="button"
-                      className="btn-close"
-                      data-bs-dismiss="modal"
-                      aria-label="Close"
-                    ></button>
-                  </div>
-                  <div className="modal-body">
-                    <form>
-                      <div className="mb-3">
-                        <label htmlFor="meeting-title" className="form-label">
-                          Meeting Title
-                        </label>
-                        <input
-                          type="text"
-                          className="form-control"
-                          id="meeting-title"
-                          placeholder="Enter meeting title..."
-                          aria-label="Meeting Title"
-                        />
-                      </div>
-                      <div className="row">
-                        <div className="col-6">
-                          <div className="mb-3">
-                            <label
-                              htmlFor="task-start-date"
-                              className="form-label"
-                            >
-                              Date
-                            </label>
-                            <input
-                              type="date"
-                              className="form-control text-dark-emphasis"
-                              id="task-start-date"
-                              aria-label="Task Start Date"
-                            />
-                          </div>
-                        </div>
-                        <div className="col-6">
-                          <div className="mb-3">
-                            <label
-                              htmlFor="task-end-date"
-                              className="form-label"
-                            >
-                              Time
-                            </label>
-                            <input
-                              type="time"
-                              className="form-control text-dark-emphasis"
-                              id="task-due-date"
-                              aria-label="Task End Date"
-                            />
-                          </div>
-                        </div>
-                        <div className="row">
-                          <div className="col">
-                            <div className="mb-3">
-                              <label
-                                htmlFor="task-assigned-to"
-                                className="form-label"
-                              >
-                                Assigned To
-                              </label>
-                              <input
-                                type="search"
-                                className="form-control multi-user-input"
-                                id="task-assigned-to"
-                                placeholder="Search user..."
-                                aria-label="Assigned To"
-                              />
-                            </div>
-                          </div>
-                        </div>
-                        <div className="">
-                          <label
-                            htmlFor="meeting-description"
-                            className="form-label"
-                          >
-                            Meeting Agenda
-                          </label>
-                          <textarea
-                            className="form-control"
-                            id="task-description"
-                            rows="3"
-                            placeholder="Enter meeting agenda..."
-                            aria-label="Meeting Agenda"
-                          ></textarea>
-                        </div>
-                      </div>
-                    </form>
-                  </div>
-                  <div className="modal-footer border-top-0">
-                    <button
-                      type="button"
-                      className="btn border px-4"
-                      data-bs-dismiss="modal"
-                    >
-                      Cancel
-                    </button>
-                    <button type="submit" className="btn btn-primary">
-                      Schedule Meeting
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <ScheduleMeetingModal
+              isOpen={scheduleModal}
+              onClose={() => setScheduleModal(false)}
+              onSubmit={handleCreateMeeting}
+            />
           </div>
         </div>
 
-        <div className="mb-3 " style={{ width: " fit-content" }}>
+        <div className="mb-3" style={{ width: "fit-content" }}>
           <ul
             className="nav nav-pills border rounded-3 border-1 border-secondary-subtle p-1 w-auto bg-white"
             id="pills-tab"

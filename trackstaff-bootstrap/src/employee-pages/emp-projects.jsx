@@ -1,152 +1,47 @@
-import React from "react";
+import React, { useState } from "react";
+import RequestProjectModal from "../Components/Modals/RequestProjectModal";
 
 const EmpProjects = () => {
+  const [requestModalOpen, setRequestModalOpen] = useState(false);
+
+  const handleRequestTask = () => {
+    alert("Project Requested");
+    setRequestModalOpen(false);
+  };
+
+  const openProjectRequestModal = () => {
+    setRequestModalOpen(true);
+  };
+
   return (
     <main className="p-3">
       <div className="px-2 pl-2 bg-white p-3 rounded-3">
-        {/* <!-- Projects Heading Start --> */}
+        {/* Projects Heading Start */}
         <div className="row mb-3 justify-content-between align-items-center">
           <div className="col">
             <h5 className="fs-2 fw-semibold">Projects</h5>
-            {/* <!-- <p  className="">Track your work hours and attendance</p> --> */}
+            {/* <p  className="">Track your work hours and attendance</p> */}
           </div>
           <div className="col text-end">
             <button
               className="btn btn-primary w-auto"
               data-bs-toggle="modal"
-              data-bs-target="#addProjectModal"
+              data-bs-target="#addProjectRequestModal"
+              style={{ fontSize: "16px" }}
+              onClick={openProjectRequestModal}
             >
-              <i className="bi bi-plus fs-5"></i> Request Project
+              <i className="bi bi-plus fs-5"></i> Request Projects
             </button>
-            {/* <!-- Add Project Modal --> */}
-            <div
-              className="modal fade text-start"
-              id="addProjectModal"
-              tabIndex="-1"
-              aria-labelledby="addProjectModalLabel"
-              aria-hidden="true"
-            >
-              <div className="modal-dialog">
-                <div className="modal-content">
-                  <div className="modal-header pb-0 border-bottom-0">
-                    <div>
-                      <h5 className="modal-title" id="addProjectModalLabel">
-                        Request New Project
-                      </h5>
-                      <p className="text-muted">
-                        Fill the form below to request a new project.
-                      </p>
-                    </div>
-                    <button
-                      type="button"
-                      className="btn-close"
-                      data-bs-dismiss="modal"
-                      aria-label="Close"
-                    ></button>
-                  </div>
-                  <div className="modal-body">
-                    <form>
-                      <div className="mb-3">
-                        <label htmlFor="task-title" className="form-label">
-                          Project Title
-                        </label>
-                        <input
-                          type="search"
-                          className="form-control"
-                          id="task-title"
-                          placeholder="Search by project title..."
-                          aria-label="Project Title"
-                        />
-                      </div>
-                      <div className="mb-3">
-                        <label
-                          htmlFor="task-description"
-                          className="form-label"
-                        >
-                          Description
-                        </label>
-                        <textarea
-                          className="form-control"
-                          id="task-description"
-                          rows="3"
-                          placeholder="Enter project description..."
-                          aria-label="Project Description"
-                        ></textarea>
-                      </div>
-                      <div className="row">
-                        <div className="col">
-                          <div className="mb-3">
-                            <label
-                              htmlFor="task-assigned-to"
-                              className="form-label"
-                            >
-                              Assigned To
-                            </label>
-                            <input
-                              type="search"
-                              className="form-control"
-                              id="task-assigned-to"
-                              placeholder="Search user..."
-                              aria-label="Assigned To"
-                            />
-                          </div>
-                        </div>
-                      </div>
 
-                      <div className="row">
-                        <div className="col-6">
-                          <div className="mb-3">
-                            <label
-                              htmlFor="task-start-date"
-                              className="form-label"
-                            >
-                              Start Date
-                            </label>
-                            <input
-                              type="date"
-                              className="form-control text-dark-emphasis"
-                              id="task-start-date"
-                              aria-label="Task Start Date"
-                            />
-                          </div>
-                        </div>
-                        <div className="col-6">
-                          <div className="mb-3">
-                            <label
-                              htmlFor="task-end-date"
-                              className="form-label"
-                            >
-                              Due Date
-                            </label>
-                            <input
-                              type="date"
-                              className="form-control text-dark-emphasis"
-                              id="task-due-date"
-                              aria-label="Task End Date"
-                            />
-                          </div>
-                        </div>
-                      </div>
-                    </form>
-                  </div>
-                  <div className="modal-footer border-top-0">
-                    <button
-                      type="button"
-                      className="btn border px-4"
-                      data-bs-dismiss="modal"
-                    >
-                      Cancel
-                    </button>
-                    <button type="submit" className="btn btn-primary px-4">
-                      Request Project
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
+            {/* Task Modal with separate state */}
+            <RequestProjectModal
+              isOpen={requestModalOpen}
+              onClose={() => setRequestModalOpen(false)}
+              onSubmit={handleRequestTask}
+            />
           </div>
         </div>
-        {/* <!-- Projects Heading End --> */}
+        {/* Projects Heading End */}
 
         <div className="mb-3 " style={{ width: "fit-content" }}>
           <ul
@@ -192,7 +87,7 @@ const EmpProjects = () => {
             role="tabpanel"
             aria-labelledby="pills-active-tab"
           >
-            {/* <!-- Active Projects --> */}
+            {/* Active Projects */}
             <form className="d-flex flex-column flex-sm-row flex-wrap justify-content-between align-items-sm-end gap-2 mb-3">
               <div className="flex-grow-1">
                 <label htmlFor="search" className="form-label">
@@ -217,7 +112,7 @@ const EmpProjects = () => {
                       placeholder="dd/mm/yy"
                       aria-label="Start Date"
                     />
-                    {/* <!-- <span  className="input-group-text"><i  className="bi bi-calendar"></i></span> --> */}
+                    {/* <span  className="input-group-text"><i  className="bi bi-calendar"></i></span> */}
                   </div>
                 </div>
                 <div className="flex-grow-1">
@@ -231,7 +126,7 @@ const EmpProjects = () => {
                       placeholder="dd/mm/yy"
                       aria-label="Due Date"
                     />
-                    {/* <!-- <span  className="input-group-text"><i  className="bi bi-calendar"></i></span> --> */}
+                    {/* <span  className="input-group-text"><i  className="bi bi-calendar"></i></span> */}
                   </div>
                 </div>
                 <div className="flex-grow-1">
@@ -242,8 +137,9 @@ const EmpProjects = () => {
                     className="form-select text-dark-emphasis"
                     id="task-status"
                     aria-label="Task Status"
+                    defaultValue=""
                   >
-                    <option selected="" disabled="">
+                    <option value="" disabled>
                       All
                     </option>
                     <option value="pending">Pending</option>
@@ -260,7 +156,7 @@ const EmpProjects = () => {
               </div>
             </form>
 
-            {/* <!-- Task Table --> */}
+            {/* Task Table */}
             <div className="task-table table-responsive overflow-auto">
               <table className="table text-center">
                 <thead className="table-light border">
@@ -310,7 +206,7 @@ const EmpProjects = () => {
                     <td>
                       <div
                         className="dropdown position-static"
-                        style={{ cursor: " pointer" }}
+                        style={{ cursor: "pointer" }}
                       >
                         <i
                           className="bi bi-three-dots-vertical"
@@ -387,7 +283,7 @@ const EmpProjects = () => {
                     <td>
                       <div
                         className="dropdown position-static"
-                        style={{ cursor: " pointer" }}
+                        style={{ cursor: "pointer" }}
                       >
                         <i
                           className="bi bi-three-dots-vertical"
@@ -464,7 +360,7 @@ const EmpProjects = () => {
                     <td>
                       <div
                         className="dropdown position-static"
-                        style={{ cursor: " pointer" }}
+                        style={{ cursor: "pointer" }}
                       >
                         <i
                           className="bi bi-three-dots-vertical"
@@ -514,7 +410,7 @@ const EmpProjects = () => {
             role="tabpanel"
             aria-labelledby="pills-my-requests-tab"
           >
-            {/* <!-- My Requests --> */}
+            {/* My Requests */}
             <form className="d-flex flex-column flex-sm-row flex-wrap justify-content-between align-items-sm-end gap-2 mb-3">
               <div className="flex-grow-1">
                 <label htmlFor="search" className="form-label">
@@ -539,7 +435,7 @@ const EmpProjects = () => {
                       placeholder="dd/mm/yy"
                       aria-label="Start Date"
                     />
-                    {/* <!-- <span  className="input-group-text"><i  className="bi bi-calendar"></i></span/> --> */}
+                    {/* <span  className="input-group-text"><i  className="bi bi-calendar"></i></span> */}
                   </div>
                 </div>
                 <div className="flex-grow-1">
@@ -553,7 +449,7 @@ const EmpProjects = () => {
                       placeholder="dd/mm/yy"
                       aria-label="Due Date"
                     />
-                    {/* <!-- <span  className="input-group-text"><i  className="bi bi-calendar"></i></span> --> */}
+                    {/* <span  className="input-group-text"><i  className="bi bi-calendar"></i></span> */}
                   </div>
                 </div>
                 <div className="flex-grow-1">
@@ -564,8 +460,9 @@ const EmpProjects = () => {
                     className="form-select text-dark-emphasis"
                     id="task-status"
                     aria-label="Task Status"
+                    defaultValue=""
                   >
-                    <option selected="" disabled="">
+                    <option value="" disabled>
                       All
                     </option>
                     <option value="pending">Pending</option>
@@ -582,7 +479,7 @@ const EmpProjects = () => {
               </div>
             </form>
 
-            {/* <!-- Task Table -->/ */}
+            {/* Task Table */}
             <div className="task-table table-responsive overflow-auto">
               <table className="table text-center">
                 <thead className="table-light border">
@@ -630,11 +527,11 @@ const EmpProjects = () => {
                       />
                       <span className="ms-2 pt-2">+2</span>
                     </td>
-                    <td className="text-start">Good</td>//
+                    <td className="text-start">Good</td>
                     <td>
                       <div
                         className="dropdown position-static"
-                        style={{ cursor: " pointer" }}
+                        style={{ cursor: "pointer" }}
                       >
                         <i
                           className="bi bi-three-dots-vertical"
@@ -711,7 +608,7 @@ const EmpProjects = () => {
                     <td>
                       <div
                         className="dropdown position-static"
-                        style={{ cursor: " pointer" }}
+                        style={{ cursor: "pointer" }}
                       >
                         <i
                           className="bi bi-three-dots-vertical"
@@ -788,7 +685,7 @@ const EmpProjects = () => {
                     <td>
                       <div
                         className="dropdown position-static"
-                        style={{ cursor: " pointer" }}
+                        style={{ cursor: "pointer" }}
                       >
                         <i
                           className="bi bi-three-dots-vertical"
