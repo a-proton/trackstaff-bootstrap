@@ -282,6 +282,24 @@ body {
   background-color: var(--bs-primary);
   color: white !important;
 }
+.dropdown-item:hover .navbar-dropdown,
+.dropdown-item:hover .navbar-dropdown i {
+  color: black !important;
+}
+.dropdown-item:hover .navbar-dropdown-red,
+.dropdown-item:hover .navbar-dropdown-red i {
+  color: rgb(239, 13, 13) !important;
+}
+.dropdown-item:hover i,
+.dropdown-item.active i {
+  color: white !important;
+}
+.meeting_icon__pen:hover {
+  color: #0a77cc;
+}
+.meeting_icon__trash:hover {
+  color: #e40b0b;
+}
 .form-check-input[type="radio"] {
   border-color: var(--bs-primary);
 }

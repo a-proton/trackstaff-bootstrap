@@ -29,13 +29,13 @@ const AddProjectModal = ({ isOpen, onClose, onSubmit }) => {
         aria-hidden={!show}
       >
         <div className="modal-dialog text-start">
-          <div className="modal-content">
-            <div className="modal-header pb-0 border-bottom-0">
-              <div className="  w-100">
+          <div className="modal-content  ">
+            <div className="modal-header pb-0 border-bottom-0 align-items-start">
+              <div>
                 <h5 className="modal-title" id="addProjectModalLabel">
                   Add New Project
                 </h5>
-                <p className="text-muted mb-0">
+                <p className="text-muted  ">
                   Fill the form below to add a new project.
                 </p>
               </div>

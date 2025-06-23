@@ -1,6 +1,16 @@
-import React from "react";
-
+import ReminderModal from "../Components/Modals/reminderModal";
+import { useState } from "react";
 const EmpReminders = () => {
+  const [modalOpen, setModalOpen] = useState(false);
+
+  const handleAddReminder = () => {
+    alert("Reminder Added!");
+    setModalOpen(false);
+  };
+
+  const openReminderModal = () => {
+    setModalOpen(true);
+  };
   return (
     <main className="p-3 reminders">
       <div className="p-3 pl-2 bg-white rounded-3">
@@ -13,224 +23,16 @@ const EmpReminders = () => {
           <div className="col text-end">
             <button
               className="btn btn-primary w-auto text-nowrap"
-              data-bs-toggle="modal"
-              data-bs-target="#addReminderModal"
+              onClick={openReminderModal}
             >
               <i className="bi bi-plus fs-5"></i> Add Reminder
             </button>
             {/* <!-- Add Reminder Modal --> */}
-            <div
-              className="modal fade text-start"
-              id="addReminderModal"
-              tabindex="-1"
-              aria-labelledby="addReminderModalLabel"
-              aria-hidden="true"
-            >
-              <div className="modal-dialog">
-                <div className="modal-content">
-                  <div className="modal-header pb-0 border-bottom-0 align-items-start">
-                    <div>
-                      <h5 className="modal-title" id="addReminderModalLabel">
-                        Add New Reminder
-                      </h5>
-                      <p className="text-muted">
-                        Fill the form below to add a new reminder.
-                      </p>
-                    </div>
-                    <button
-                      type="button"
-                      className="btn-close"
-                      data-bs-dismiss="modal"
-                      aria-label="Close"
-                    ></button>
-                  </div>
-                  <div className="modal-body overflow-auto">
-                    <form>
-                      <div className="mb-3">
-                        <label for="reminder-title" className="form-label">
-                          Reminder Title
-                        </label>
-                        <input
-                          type="text"
-                          className="form-control"
-                          id="reminder-title"
-                          placeholder="Enter reminder title..."
-                          aria-label="Reminder Title"
-                        />
-                      </div>
-                      <div className="mb-3">
-                        <label
-                          for="reminder-description"
-                          className="form-label"
-                        >
-                          Description
-                        </label>
-                        <textarea
-                          className="form-control"
-                          id="reminder-description"
-                          rows="3"
-                          placeholder="Enter reminder description..."
-                          aria-label="Reminder Description"
-                        ></textarea>
-                      </div>
-                      <div className="row">
-                        <div className="col-6">
-                          <div className="mb-3">
-                            <label
-                              for="task-assigned-to"
-                              className="form-label"
-                            >
-                              Assigned To
-                            </label>
-                            <input
-                              type="search"
-                              className="form-control"
-                              id="reminder-assigned-to"
-                              placeholder="Search user..."
-                              aria-label="Assigned To"
-                            />
-                          </div>
-                        </div>
-                        <div className="col-6">
-                          <div className="mb-3">
-                            <label
-                              for="reminder-assignee"
-                              className="form-label"
-                            >
-                              Assignee
-                            </label>
-                            <input
-                              type="search"
-                              className="form-control"
-                              id="reminder-assignee"
-                              placeholder="Search user..."
-                              aria-label="Assignee"
-                            />
-                          </div>
-                        </div>
-                      </div>
-                      <div className="row">
-                        <div className="col-6">
-                          <div className="mb-3">
-                            <label
-                              for="reminder-due-date"
-                              className="form-label"
-                            >
-                              Due Date
-                            </label>
-                            <input
-                              type="date"
-                              className="form-control text-dark-emphasis"
-                              id="reminder-due-date"
-                              aria-label="Reminder Due Date"
-                            />
-                          </div>
-                        </div>
-                        <div className="col-6">
-                          <div className="mb-3">
-                            <label
-                              for="reminder-due-time"
-                              className="form-label"
-                            >
-                              Due Time
-                            </label>
-                            <input
-                              type="time"
-                              className="form-control text-dark-emphasis"
-                              id="reminder-due-time"
-                              aria-label="Reminder Due Time"
-                            />
-                          </div>
-                        </div>
-                      </div>
-                      <div className="mb-3">
-                        <label for="task-priority" className="form-label">
-                          Priority
-                        </label>
-                        <div className="d-flex align-items-center gap-4">
-                          <div className="form-check">
-                            <input
-                              className="form-check-input"
-                              type="radio"
-                              value="low"
-                              name="reminder-priority"
-                              id="reminder-priority-low"
-                            />
-                            <label
-                              className="form-check-label"
-                              for="reminder-priority-low"
-                            >
-                              Low
-                            </label>
-                          </div>
-                          <div className="form-check">
-                            <input
-                              className="form-check-input"
-                              type="radio"
-                              value="medium"
-                              name="reminder-priority"
-                              id="reminder-priority-medium"
-                              checked=""
-                            />
-                            <label
-                              className="form-check-label"
-                              for="reminder-priority-medium"
-                            >
-                              Medium
-                            </label>
-                          </div>
-                          <div className="form-check">
-                            <input
-                              className="form-check-input"
-                              type="radio"
-                              value="high"
-                              name="reminder-priority"
-                              id="reminder-priority-high"
-                            />
-                            <label
-                              className="form-check-label"
-                              for="reminder-priority-high"
-                            >
-                              High
-                            </label>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="mb-3">
-                        <label for="task-repeat" className="form-label">
-                          Repeat
-                        </label>
-                        <select
-                          className="form-select text-dark-emphasis"
-                          id="reminder-repeat"
-                          aria-label="Task Repeat"
-                        >
-                          <option selected="" disabled="">
-                            Never
-                          </option>
-                          <option value="daily">Daily</option>
-                          <option value="weekly">Weekly</option>
-                          <option value="monthly">Monthly</option>
-                          <option value="yearly">Yearly</option>
-                        </select>
-                      </div>
-                    </form>
-                  </div>
-                  <div className="modal-footer border-top-0">
-                    <button
-                      type="button"
-                      className="btn border px-4"
-                      data-bs-dismiss="modal"
-                    >
-                      Cancel
-                    </button>
-                    <button type="submit" className="btn btn-primary px-4">
-                      Create Reminder
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <ReminderModal
+              isOpen={modalOpen}
+              onClose={() => setModalOpen(false)}
+              onSubmit={handleAddReminder}
+            />
           </div>
         </div>
         {/* <!-- My Tasks Heading End --> */}

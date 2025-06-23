@@ -32,12 +32,12 @@ const ScheduleMeetingModal = ({ isOpen, onClose, onSubmit }) => {
         <div className="modal-dialog text-start">
           <div className="modal-content">
             {/* Updated header to match AddProjectModal */}
-            <div className="modal-header pb-0 border-bottom-0">
-              <div className="w-100">
+            <div className="modal-header pb-0 border-bottom-0 align-items-start">
+              <div>
                 <h5 className="modal-title" id="addMeetingModalLabel">
                   Schedule New Meeting
                 </h5>
-                <p className="text-muted mb-0">
+                <p className="text-muted ">
                   Fill the form below to schedule a new meeting.
                 </p>
               </div>

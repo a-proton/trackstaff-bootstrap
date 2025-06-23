@@ -1,4 +1,3 @@
-// NavbarComponent.jsx
 import React from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useAuth } from "../Contexts/AuthContext";
@@ -8,6 +7,16 @@ const NavbarComponent = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const { logout, user } = useAuth();
+
+  // Function to determine login type based on current path or user role
+  const getLoginType = () => {
+    const role = user?.role?.toLowerCase();
+    if (role === "admin" || role === "administrator") {
+      return "Admin";
+    } else {
+      return "Employee";
+    }
+  };
 
   const handleLogout = async () => {
     try {
@@ -208,17 +217,15 @@ const NavbarComponent = () => {
                       />
                       <div className="d-flex flex-column px-3">
                         <h6 className="fw-bold m-0">{user?.name || "User"}</h6>
-                        <p className="text-muted m-0">
-                          {user?.role || "Employee"}
-                        </p>
+                        <p className="text-muted m-0">{getLoginType()}</p>
                       </div>
                     </div>
                   </li>
                   <hr />
                   <li>
-                    <Link to="/profile" className="dropdown-item">
-                      <div className="d-flex align-items-center gap-2">
-                        <i className="bi bi-person fs-5"></i>
+                    <Link to="/profile" className="dropdown-item ">
+                      <div className="d-flex align-items-center gap-2 ">
+                        <i className="bi bi-person fs-5 navbar-dropdown "></i>
                         <span>Profile</span>
                       </div>
                     </Link>
@@ -226,18 +233,18 @@ const NavbarComponent = () => {
                   <li>
                     <Link to="/change-password" className="dropdown-item">
                       <div className="d-flex align-items-center gap-2">
-                        <i className="bi bi-gear fs-5"></i>
+                        <i className="bi bi-gear fs-5 navbar-dropdown "></i>
                         <span>Change Password</span>
                       </div>
                     </Link>
                   </li>
                   <li>
-                    <button className="dropdown-item" onClick={handleLogout}>
+                    <Link className="dropdown-item" onClick={handleLogout}>
                       <div className="d-flex align-items-center gap-2 text-danger">
-                        <i className="bi bi-box-arrow-right fs-5"></i>
+                        <i className="bi bi-box-arrow-right fs-5 navbar-dropdown-red"></i>
                         <span>Logout</span>
                       </div>
-                    </button>
+                    </Link>
                   </li>
                 </ul>
               </div>
@@ -266,7 +273,7 @@ const NavbarComponent = () => {
                     <h6 className="fw-bold m-0">
                       {user?.name || "Manish Shrestha"}
                     </h6>
-                    <p className="text-muted m-0">{user?.role || "Employee"}</p>
+                    <p className="text-muted m-0">{getLoginType()}</p>
                   </div>
                 </div>
                 <div
@@ -286,7 +293,7 @@ const NavbarComponent = () => {
                     <li>
                       <Link className="dropdown-item" to="/profile">
                         <div className="d-flex align-items-center gap-2">
-                          <i className="bi bi-person fs-5"></i>
+                          <i className="bi bi-person fs-5 navbar-dropdown"></i>
                           <span>Profile</span>
                         </div>
                       </Link>
@@ -294,7 +301,7 @@ const NavbarComponent = () => {
                     <li>
                       <Link className="dropdown-item" to="/change-password">
                         <div className="d-flex align-items-center gap-2">
-                          <i className="bi bi-gear fs-5"></i>
+                          <i className="bi bi-gear fs-5 navbar-dropdown"></i>
                           <span>Change Password</span>
                         </div>
                       </Link>
@@ -302,7 +309,7 @@ const NavbarComponent = () => {
                     <li>
                       <Link className="dropdown-item" onClick={handleLogout}>
                         <div className="d-flex align-items-center gap-2 text-danger">
-                          <i className="bi bi-box-arrow-right fs-5"></i>
+                          <i className="bi bi-box-arrow-right fs-5 navbar-dropdown-red"></i>
                           <span>Logout</span>
                         </div>
                       </Link>

@@ -6,7 +6,9 @@ const MenuItems = () => {
       <li className="nav-item">
         <a
           className={`nav-link ${
-            location.pathname === "/dashboard" ? "active" : ""
+            location.pathname === "/dashboard" || location.pathname === "/"
+              ? "active"
+              : ""
           }`}
           aria-current="page"
           href="dashboard"

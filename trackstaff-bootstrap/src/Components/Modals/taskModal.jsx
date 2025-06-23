@@ -28,9 +28,9 @@ const AddTaskModal = ({ isOpen, onClose, onSubmit }) => {
         aria-labelledby="addTaskModalLabel"
         aria-hidden={!show}
       >
-        <div className="modal-dialog">
+        <div className="modal-dialog text-start">
           <div className="modal-content">
-            <div className="modal-header pb-0 border-bottom-0">
+            <div className="modal-header pb-0 border-bottom-0 align-items-start">
               <div>
                 <h5 className="modal-title">Create New Task</h5>
                 <p className="text-muted">
@@ -39,8 +39,8 @@ const AddTaskModal = ({ isOpen, onClose, onSubmit }) => {
               </div>
               <button
                 type="button"
-                className="btn-close"
-                onClick={onClose} // Close when clicking X button
+                className="btn-close "
+                onClick={onClose}
                 aria-label="Close"
               ></button>
             </div>

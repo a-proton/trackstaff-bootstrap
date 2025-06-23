@@ -37,7 +37,7 @@ const EmpMeetings = () => {
           </div>
         </div>
         {/* <!-- My Tasks Heading End --> */}
-        <div className="mb-3 " style={{ width: "fit-content;" }}>
+        <div className="mb-3 " style={{ width: "fit-content" }}>
           <ul
             className="nav nav-pills border rounded-3 border-1 border-secondary-subtle p-1 w-auto bg-white"
             id="pills-tab"

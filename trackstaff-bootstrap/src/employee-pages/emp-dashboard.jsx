@@ -151,7 +151,7 @@ const EmpDashboard = () => {
                             </label>
                             <input
                               type="date"
-                              className="form-control"
+                              className="form-control text-dark-emphasis"
                               id="checkInDate"
                               aria-label="Date"
                               value={checkInDate || ""}
@@ -165,7 +165,7 @@ const EmpDashboard = () => {
                             <input
                               required
                               type="time"
-                              className="form-control"
+                              className="form-control text-dark-emphasis"
                               id="checkInTime"
                               aria-label="Time"
                               value={checkInTime}

@@ -87,7 +87,7 @@ const EmployeeAttendence = () => {
                             >
                               <i className="bi bi-three-dots-vertical fs-5"></i>
                             </button>
-                            <ul className="dropdown-menu dropdown-menu-end">
+                            <ul className="dropdown-menu  dropdown-menu-end">
                               <li>
                                 <a
                                   className="dropdown-item"

@@ -13,13 +13,16 @@ const EmpLogin = () => {
 
   const navigate = useNavigate();
   const { employeeLogin } = useAuth(); // Use the employeeLogin method from AuthContext
+  const [style, setStyle] = useState({});
 
+  const handleClick = () => {
+    setStyle({ borderColor: "#1AB189" });
+  };
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError("");
     setLoading(true);
 
-    // Basic validation
     if (!email || !password) {
       setError("Please fill in all fields");
       setLoading(false);
@@ -91,6 +94,7 @@ const EmpLogin = () => {
               placeholder="Email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
+              onClick={handleClick}
               style={{ fontSize: "16px" }}
               required
               disabled={loading}
@@ -123,7 +127,7 @@ const EmpLogin = () => {
             <a
               href="/forgetpassword"
               className="text-primary text-decoration-none"
-              style={{ fontSize: "14px" }}
+              style={{ fontSize: "14px", color: "#0171d3" }}
             >
               Forget Password?
             </a>
