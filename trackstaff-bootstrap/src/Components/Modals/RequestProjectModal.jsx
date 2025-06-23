@@ -51,9 +51,9 @@ const RequestProjectModal = ({ isOpen, onClose, onSubmit }) => {
         aria-labelledby="addProjectModalLabel"
         aria-hidden={!show}
       >
-        <div className="modal-dialog">
+        <div className="modal-dialog text-start">
           <div className="modal-content">
-            <div className="modal-header pb-0 border-bottom-0">
+            <div className="modal-header pb-0 border-bottom-0 align-items-start">
               <div>
                 <h5 className="modal-title" id="addProjectModalLabel">
                   Request New Project

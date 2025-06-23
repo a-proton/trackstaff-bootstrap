@@ -122,7 +122,7 @@ const NavbarComponent = () => {
                   <li>
                     <a className="dropdown-item" href="#">
                       <div className="d-flex align-items-start gap-3">
-                        <i className="bi bi-box-arrow-right text-danger fs-5"></i>
+                        <i className="bi bi-box-arrow-right text-danger fs-5 navbar-dropdown-red"></i>
                         <div>
                           <div>
                             <span className="fw-bold">Check-Out: </span>

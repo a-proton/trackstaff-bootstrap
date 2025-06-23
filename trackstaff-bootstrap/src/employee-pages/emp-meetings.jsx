@@ -88,10 +88,10 @@ const EmpMeetings = () => {
                     <div className="d-flex justify-content-between align-items-baseline">
                       <h5 className="card-title m-0">Team Meeting 1</h5>
                       <div className="d-flex gap-3 fs-5">
-                        <a className="meeting_icon__pen_hover" href="#">
+                        <a className="meeting_icon__pen" href="#">
                           <i className="bi bi-pen"></i>
                         </a>
-                        <a className="meeting_icon__trash_hover" href="#">
+                        <a className="meeting_icon__trash" href="#">
                           <i className="bi bi-trash"></i>
                         </a>
                       </div>
@@ -151,10 +151,10 @@ const EmpMeetings = () => {
                     <div className="d-flex justify-content-between align-items-baseline">
                       <h5 className="card-title m-0">Team Meeting 1</h5>
                       <div className="d-flex gap-3 fs-5">
-                        <a className="meeting_icon__pen_hover" href="#">
+                        <a className="meeting_icon__pen" href="#">
                           <i className="bi bi-pen"></i>
                         </a>
-                        <a className="meeting_icon__trash_hover" href="#">
+                        <a className="meeting_icon__trash" href="#">
                           <i className="bi bi-trash"></i>
                         </a>
                       </div>
@@ -214,10 +214,10 @@ const EmpMeetings = () => {
                     <div className="d-flex justify-content-between align-items-baseline">
                       <h5 className="card-title m-0">Team Meeting 1</h5>
                       <div className="d-flex gap-3 fs-5">
-                        <a className="meeting_icon__pen_hover" href="#">
+                        <a className="meeting_icon__pen" href="#">
                           <i className="bi bi-pen"></i>
                         </a>
-                        <a className="meeting_icon__trash_hover" href="#">
+                        <a className="meeting_icon__trash" href="#">
                           <i className="bi bi-trash"></i>
                         </a>
                       </div>
@@ -277,10 +277,10 @@ const EmpMeetings = () => {
                     <div className="d-flex justify-content-between align-items-baseline">
                       <h5 className="card-title m-0">Team Meeting 1</h5>
                       <div className="d-flex gap-3 fs-5">
-                        <a className="meeting_icon__pen_hover" href="#">
+                        <a className="meeting_icon__pen" href="#">
                           <i className="bi bi-pen"></i>
                         </a>
-                        <a className="meeting_icon__trash_hover" href="#">
+                        <a className="meeting_icon__trash" href="#">
                           <i className="bi bi-trash"></i>
                         </a>
                       </div>
@@ -340,10 +340,10 @@ const EmpMeetings = () => {
                     <div className="d-flex justify-content-between align-items-baseline">
                       <h5 className="card-title m-0">Team Meeting 1</h5>
                       <div className="d-flex gap-3 fs-5">
-                        <a className="meeting_icon__pen_hover" href="#">
+                        <a className="meeting_icon__pen" href="#">
                           <i className="bi bi-pen"></i>
                         </a>
-                        <a className="meeting_icon__trash_hover" href="#">
+                        <a className="meeting_icon__trash" href="#">
                           <i className="bi bi-trash"></i>
                         </a>
                       </div>
@@ -403,10 +403,10 @@ const EmpMeetings = () => {
                     <div className="d-flex justify-content-between align-items-baseline">
                       <h5 className="card-title m-0">Team Meeting 1</h5>
                       <div className="d-flex gap-3 fs-5">
-                        <a className="meeting_icon__pen_hover" href="#">
+                        <a className="meeting_icon__pen" href="#">
                           <i className="bi bi-pen"></i>
                         </a>
-                        <a className="meeting_icon__trash_hover" href="#">
+                        <a className="meeting_icon__trash" href="#">
                           <i className="bi bi-trash"></i>
                         </a>
                       </div>

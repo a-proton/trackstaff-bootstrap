@@ -388,10 +388,10 @@ const EmpReminders = () => {
                         </label>
                       </div>
                       <div className="d-flex gap-3 fs-5">
-                        <a className="" href="#">
+                        <a className="meeting_icon__pen" href="#">
                           <i className="bi bi-pen"></i>
                         </a>
-                        <a className="" href="#">
+                        <a className="meeting_icon__trash" href="#">
                           <i className="bi bi-trash"></i>
                         </a>
                       </div>
@@ -463,10 +463,10 @@ const EmpReminders = () => {
                         </label>
                       </div>
                       <div className="d-flex gap-3 fs-5">
-                        <a className="" href="#">
+                        <a className="meeting_icon__pen" href="#">
                           <i className="bi bi-pen"></i>
                         </a>
-                        <a className="" href="#">
+                        <a className="meeting_icon__trash" href="#">
                           <i className="bi bi-trash"></i>
                         </a>
                       </div>
@@ -538,10 +538,10 @@ const EmpReminders = () => {
                         </label>
                       </div>
                       <div className="d-flex gap-3 fs-5">
-                        <a className="" href="#">
+                        <a className="meeting_icon__pen" href="#">
                           <i className="bi bi-pen"></i>
                         </a>
-                        <a className="" href="#">
+                        <a className="meeting_icon__trash" href="#">
                           <i className="bi bi-trash"></i>
                         </a>
                       </div>
@@ -613,10 +613,10 @@ const EmpReminders = () => {
                         </label>
                       </div>
                       <div className="d-flex gap-3 fs-5">
-                        <a className="" href="#">
+                        <a className="meeting_icon__pen" href="#">
                           <i className="bi bi-pen"></i>
                         </a>
-                        <a className="" href="#">
+                        <a className="meeting_icon__trash" href="#">
                           <i className="bi bi-trash"></i>
                         </a>
                       </div>
@@ -688,10 +688,10 @@ const EmpReminders = () => {
                         </label>
                       </div>
                       <div className="d-flex gap-3 fs-5">
-                        <a className="" href="#">
+                        <a className="meeting_icon__pen" href="#">
                           <i className="bi bi-pen"></i>
                         </a>
-                        <a className="" href="#">
+                        <a className="meeting_icon__trash" href="#">
                           <i className="bi bi-trash"></i>
                         </a>
                       </div>
@@ -763,10 +763,10 @@ const EmpReminders = () => {
                         </label>
                       </div>
                       <div className="d-flex gap-3 fs-5">
-                        <a className="" href="#">
+                        <a className="meeting_icon__pen" href="#">
                           <i className="bi bi-pen"></i>
                         </a>
-                        <a className="" href="#">
+                        <a className="meeting_icon__trash" href="#">
                           <i className="bi bi-trash"></i>
                         </a>
                       </div>
@@ -847,10 +847,10 @@ const EmpReminders = () => {
                         </label>
                       </div>
                       <div className="d-flex gap-3 fs-5">
-                        <a className="" href="#">
+                        <a className="meeting_icon__pen" href="#">
                           <i className="bi bi-pen"></i>
                         </a>
-                        <a className="" href="#">
+                        <a className="meeting_icon__trash" href="#">
                           <i className="bi bi-trash"></i>
                         </a>
                       </div>
@@ -922,10 +922,10 @@ const EmpReminders = () => {
                         </label>
                       </div>
                       <div className="d-flex gap-3 fs-5">
-                        <a className="" href="#">
+                        <a className="meeting_icon__pen" href="#">
                           <i className="bi bi-pen"></i>
                         </a>
-                        <a className="" href="#">
+                        <a className="meeting_icon__trash" href="#">
                           <i className="bi bi-trash"></i>
                         </a>
                       </div>
@@ -997,10 +997,10 @@ const EmpReminders = () => {
                         </label>
                       </div>
                       <div className="d-flex gap-3 fs-5">
-                        <a className="" href="#">
+                        <a className="meeting_icon__pen" href="#">
                           <i className="bi bi-pen"></i>
                         </a>
-                        <a className="" href="#">
+                        <a className="meeting_icon__trash" href="#">
                           <i className="bi bi-trash"></i>
                         </a>
                       </div>

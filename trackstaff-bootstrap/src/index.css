@@ -290,6 +290,10 @@ body {
 .dropdown-item:hover .navbar-dropdown-red i {
   color: rgb(239, 13, 13) !important;
 }
+/* .dropdown-item:hover .navbar-dropdown-green,
+.dropdown-item:hover .navbar-dropdown-green i {
+  color: --btn-primary;
+} */
 .dropdown-item:hover i,
 .dropdown-item.active i {
   color: white !important;

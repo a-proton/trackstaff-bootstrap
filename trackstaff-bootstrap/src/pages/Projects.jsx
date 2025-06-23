@@ -232,7 +232,7 @@ const Projects = () => {
                           </li>
                           <li>
                             <a className="dropdown-item" href="#">
-                              <i className="bi bi-trash text-danger me-1"></i>{" "}
+                              <i className="bi bi-trash text-danger me-1 "></i>{" "}
                               Delete Project
                             </a>
                           </li>

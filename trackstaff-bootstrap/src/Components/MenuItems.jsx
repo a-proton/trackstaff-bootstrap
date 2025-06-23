@@ -1,122 +1,133 @@
 import React from "react";
+import { Link, useLocation } from "react-router-dom";
 
 const MenuItems = () => {
+  const location = useLocation();
+
   return (
     <ul className="navbar-nav justify-content-end flex-grow-1 px-2">
       <li className="nav-item">
-        <a
+        <Link
           className={`nav-link ${
             location.pathname === "/dashboard" || location.pathname === "/"
               ? "active"
               : ""
           }`}
           aria-current="page"
-          href="dashboard"
+          to="/dashboard"
         >
           <div className="d-flex align-items-center gap-2">
             <i className="bi bi-house"></i>
             <span style={{ fontSize: "15px" }}>Dashboard</span>
           </div>
-        </a>
+        </Link>
       </li>
+
       <li className="nav-item">
-        <a
+        <Link
           className={`nav-link ${
             location.pathname === "/employee" ? "active" : ""
           }`}
           aria-current="page"
-          href="employee"
+          to="/employee"
         >
           <div className="d-flex align-items-center gap-2">
             <i className="bi bi-people"></i>
             <span style={{ fontSize: "15px" }}>Employee</span>
           </div>
-        </a>
+        </Link>
       </li>
+
       <li className="nav-item">
-        <a
+        <Link
           className={`nav-link ${
             location.pathname === "/attendence" ? "active" : ""
           }`}
           aria-current="page"
-          href="attendence"
+          to="/attendence"
         >
           <div className="d-flex align-items-center gap-2">
             <i className="bi bi-clock"></i>
             <span style={{ fontSize: "15px" }}>Attendence</span>
           </div>
-        </a>
+        </Link>
       </li>
+
       <li className="nav-item">
-        <a
+        <Link
           className={`nav-link ${
             location.pathname === "/emp-logs" ? "active" : ""
           }`}
           aria-current="page"
-          href="/emp-logs"
+          to="/emp-logs"
         >
           <div className="d-flex align-items-center gap-2">
             <i className="bi bi-file-earmark-text"></i>
             <span style={{ fontSize: "15px" }}>Logs</span>
           </div>
-        </a>
+        </Link>
       </li>
+
       <li className="nav-item">
-        <a
+        <Link
           className={`nav-link ${
             location.pathname === "/tasks" ? "active" : ""
           }`}
           aria-current="page"
-          href="/tasks"
+          to="/tasks"
         >
           <div className="d-flex align-items-center gap-2">
             <i className="bi bi-check2-circle"></i>
             <span style={{ fontSize: "15px" }}>Tasks</span>
           </div>
-        </a>
+        </Link>
       </li>
+
       <li className="nav-item">
-        <a
+        <Link
           className={`nav-link ${
             location.pathname === "/projects" ? "active" : ""
           }`}
           aria-current="page"
-          href="/projects"
+          to="/projects"
         >
           <div className="d-flex align-items-center gap-2">
             <i className="bi bi-suitcase-lg"></i>
             <span style={{ fontSize: "15px" }}>Projects</span>
           </div>
-        </a>
+        </Link>
       </li>
+
       <li className="nav-item">
-        <a
+        <Link
           className={`nav-link ${
             location.pathname === "/meetings" ? "active" : ""
           }`}
           aria-current="page"
-          href="/meetings"
+          to="/meetings"
         >
           <div className="d-flex align-items-center gap-2">
             <i className="bi bi-camera-video"></i>
             <span style={{ fontSize: "15px" }}>Meetings</span>
           </div>
-        </a>
+        </Link>
       </li>
+
       <li className="nav-item">
-        <a
+        <Link
           className={`nav-link ${
             location.pathname === "/reminders" ? "active" : ""
           }`}
           aria-current="page"
-          href="/reminders"
+          to="/reminders"
         >
           <div className="d-flex align-items-center gap-2">
             <i className="bi bi-calendar4-event"></i>
             <span style={{ fontSize: "15px" }}>Reminders</span>
           </div>
-        </a>
+        </Link>
       </li>
+
       <li className="nav-item">
         <a
           className="nav-link dropdown-toggle d-flex align-items-center justify-content-between gap-2"
@@ -134,28 +145,28 @@ const MenuItems = () => {
 
         <ul className="dropdown-menu collapse border-0 py-0" id="chats">
           <li>
-            <a className="dropdown-item" href="chats.html">
+            <Link className="dropdown-item" to="/chats">
               <div className="d-flex align-items-center gap-2">
                 <i className="bi bi-record-fill pt-1"></i>
                 <span>Kamsansar Web</span>
               </div>
-            </a>
+            </Link>
           </li>
           <li>
-            <a className="dropdown-item" href="chats.html">
+            <Link className="dropdown-item" to="/chats">
               <div className="d-flex align-items-center gap-2">
                 <i className="bi bi-record-fill pt-1"></i>
                 <span>Cheap Flight</span>
               </div>
-            </a>
+            </Link>
           </li>
           <li>
-            <a className="dropdown-item" href="chats.html">
+            <Link className="dropdown-item" to="/chats/new">
               <div className="d-flex align-items-center gap-2">
                 <i className="bi bi-plus pt-1"></i>
                 <span>Add New Chat</span>
               </div>
-            </a>
+            </Link>
           </li>
         </ul>
       </li>
