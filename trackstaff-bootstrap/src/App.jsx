@@ -1,6 +1,6 @@
 import { Routes, Route, BrowserRouter, Navigate } from "react-router-dom";
 import { AuthProvider } from "./Contexts/AuthContext";
-import ProtectedRoute, {
+import {
   AdminProtectedRoute,
   EmployeeProtectedRoute,
 } from "./Components/ProtectedRoute";
@@ -32,7 +32,8 @@ import EmpLogin from "./employee-pages/emp-login";
 import ForgetPassword from "./employee-pages/emp-forgetpass";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
-
+import Chats from "./pages/Chats";
+import Calendar from "./pages/Calendar";
 function App() {
   return (
     <AuthProvider>
@@ -68,6 +69,8 @@ function App() {
             <Route path="reminders" element={<Reminders />} />
             <Route path="view-employee" element={<ViewEmployeeDetails />} />
             <Route path="edit-employee" element={<EditEmployee />} />
+            <Route path="chats" element={<Chats />} />
+            <Route path="calendarView" element={<Calendar />} />
           </Route>
 
           {/* Employee Routes - Only accessible by employees - NOW WITH LAYOUT */}

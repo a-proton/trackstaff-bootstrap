@@ -2,7 +2,22 @@ import React, { useState, useEffect } from "react";
 
 const AddTaskModal = ({ isOpen, onClose, onSubmit }) => {
   const [show, setShow] = useState(false);
+  const [fields, setFields] = useState([]);
 
+  const handleAddField = () => {
+    setFields([...fields, { id: Date.now() }]);
+  };
+  const handleRemoveField = (id) => {
+    setFields(fields.filter((field) => field.id !== id));
+  };
+
+  const handleInputChange = (id, key, value) => {
+    setFields(
+      fields.map((field) =>
+        field.id === id ? { ...field, [key]: value } : field
+      )
+    );
+  };
   useEffect(() => {
     if (isOpen) {
       setTimeout(() => setShow(true), 10);
@@ -71,23 +86,85 @@ const AddTaskModal = ({ isOpen, onClose, onSubmit }) => {
                   </label>
                   <input
                     type="text"
-                    className="form-control"
+                    className="form-control mb-3"
                     id="task-title"
                     placeholder="Enter task title..."
                     aria-label="Task Title"
                   />
-                </div>
-                <div className="mb-3">
-                  <label htmlFor="task-description" className="form-label">
+                  <label htmlFor="subtask-title" className="form-label mb-0">
                     Sub Task
                   </label>
-                  <textarea
-                    className="form-control"
-                    id="task-description"
-                    rows="3"
-                    placeholder="Enter sub task one per line..."
-                    aria-label="Sub Task"
-                  ></textarea>
+                  <div className="mb-3  ">
+                    {fields.map((field, index) => (
+                      <div
+                        key={field.id}
+                        className="d-flex align-items-center gap-2 mb-18px rounded p-2 "
+                        style={{ marginLeft: "-10px", marginRight: "-11px" }}
+                      >
+                        <input
+                          type="text"
+                          className="form-control   "
+                          style={{ flex: "3.1" }}
+                          placeholder="Enter sub task..."
+                          value={field.task}
+                          onChange={(e) =>
+                            handleInputChange(field.id, "task", e.target.value)
+                          }
+                        />
+
+                        <input
+                          type="text"
+                          className="form-control  "
+                          placeholder="Assign to"
+                          style={{ flex: "1.5" }}
+                          value={field.assignTo}
+                          onChange={(e) =>
+                            handleInputChange(
+                              field.id,
+                              "assignTo",
+                              e.target.value
+                            )
+                          }
+                        />
+
+                        <select
+                          className="form-select text-dark-emphasis "
+                          style={{ width: "90px" }}
+                          value={field.priority}
+                          onChange={(e) =>
+                            handleInputChange(
+                              field.id,
+                              "priority",
+                              e.target.value
+                            )
+                          }
+                        >
+                          <option value="" disabled selected>
+                            Low
+                          </option>
+
+                          <option value="Medium">Medium</option>
+                          <option value="High">High</option>
+                        </select>
+
+                        <button
+                          type="button"
+                          className="btn btn-danger"
+                          onClick={() => handleRemoveField(field.id)}
+                          style={{ borderRadius: "21px" }}
+                        >
+                          ✕
+                        </button>
+                      </div>
+                    ))}
+                    <button
+                      type="button"
+                      className="btn btn-primary  "
+                      onClick={handleAddField}
+                    >
+                      <i className="bi bi-plus fs-6"></i> Add Sub Task
+                    </button>
+                  </div>
                 </div>
                 <div className="row">
                   <div className="col-6">

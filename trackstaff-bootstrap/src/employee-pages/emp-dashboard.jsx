@@ -420,10 +420,10 @@ const EmpDashboard = () => {
                 <div>
                   <p className="mb-1 fw-semibold">Task Completed</p>
                   <p className="mb-0 fs-2 fw-semibold">12</p>
-                </div>
+                </div>{" "}
                 <div
                   className="d-flex align-items-center justify-content-center fs-3 text-primary rounded-4 bg-primary-subtle"
-                  style={{ width: "60px;", height: "55px;" }}
+                  style={{ width: "60px", height: "55px" }}
                 >
                   <i className="bi bi-check-circle"></i>
                 </div>
@@ -443,9 +443,10 @@ const EmpDashboard = () => {
                   <p className="mb-1 fw-semibold">Task In Progress</p>
                   <p className="mb-0 fs-2 fw-semibold">12</p>
                 </div>
+
                 <div
                   className="d-flex align-items-center justify-content-center fs-3 text-progress rounded-4 bg-progress-subtle"
-                  style={{ width: "60px;", height: "55px;" }}
+                  style={{ width: "60px", height: "55px" }}
                 >
                   <i className="bi bi-box"></i>
                 </div>
@@ -465,9 +466,10 @@ const EmpDashboard = () => {
                   <p className="mb-1 fw-semibold">Task Pending</p>
                   <p className="mb-0 fs-2 fw-semibold">6</p>
                 </div>
+
                 <div
                   className="d-flex align-items-center justify-content-center fs-3 text-warning rounded-4 bg-warning-subtle"
-                  style={{ width: "60px;", height: "55px;" }}
+                  style={{ width: "60px", height: "55px" }}
                 >
                   <i className="bi bi-arrow-counterclockwise"></i>
                 </div>

@@ -90,7 +90,7 @@ const NavbarComponent = () => {
                   <li>
                     <a className="dropdown-item" href="#">
                       <div className="d-flex align-items-start gap-3">
-                        <i className="bi bi-check-circle text-primary fs-4"></i>
+                        <i className="bi bi-check-circle text-primary fs-4 navbar-dropdown-green "></i>
                         <div>
                           <div>
                             <span className="fw-bold">Task Completed: </span>
@@ -106,7 +106,7 @@ const NavbarComponent = () => {
                   <li>
                     <a className="dropdown-item" href="#">
                       <div className="d-flex align-items-start gap-3">
-                        <i className="bi bi-box-arrow-in-right text-primary fs-5"></i>
+                        <i className="bi bi-box-arrow-in-right text-primary fs-5 navbar-dropdown-green"></i>
                         <div>
                           <div>
                             <span className="fw-bold">Check-In: </span>
@@ -138,7 +138,7 @@ const NavbarComponent = () => {
                   <li>
                     <a className="dropdown-item" href="#">
                       <div className="d-flex align-items-start gap-3">
-                        <i className="bi bi-calendar text-warning fs-5"></i>
+                        <i className="bi bi-calendar text-warning fs-5 navbar-dropdown-yellow"></i>
                         <div>
                           <div>
                             <span className="fw-bold">Reminder: </span>
@@ -154,13 +154,12 @@ const NavbarComponent = () => {
                   <li>
                     <a className="dropdown-item" href="#">
                       <div className="d-flex align-items-start gap-3">
-                        <i className="bi bi-clock text-info fs-5"></i>
+                        <i className="bi bi-clock text-info fs-5 navbar-dropdown-blue"></i>
                         <div>
                           <div>
                             <span className="fw-bold">Meeting: </span>
                             <span className="text-black-50">
-                              Meeting with team is scheduled for today at 10:00
-                              AM
+                              Meeting with team is scheduled today at 10:00 AM
                             </span>
                           </div>
                           <span className="text-info">2025-02-12</span>
@@ -175,7 +174,7 @@ const NavbarComponent = () => {
                       className="dropdown-item text-primary d-flex align-items-center gap-2"
                     >
                       View All Notifications{" "}
-                      <i className="bi bi-arrow-right fs-4"></i>
+                      <i className="bi bi-arrow-right fs-4 navbar-dropdown-green"></i>
                     </Link>
                   </li>
                 </ul>

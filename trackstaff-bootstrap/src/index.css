@@ -122,6 +122,11 @@ body {
   background-color: var(--bs-progress);
   border-color: var(--bs-progress-border);
 }
+.btn-task {
+  background-color: #0d99ff;
+  color: white;
+}
+
 .btn-progress:hover {
   background-color: var(--bs-progress-hover);
   border-color: var(--bs-progress-border-hover);
@@ -290,22 +295,93 @@ body {
 .dropdown-item:hover .navbar-dropdown-red i {
   color: rgb(239, 13, 13) !important;
 }
-/* .dropdown-item:hover .navbar-dropdown-green,
+.dropdown-item:hover .navbar-dropdown-green,
 .dropdown-item:hover .navbar-dropdown-green i {
-  color: --btn-primary;
-} */
+  color: rgb(25, 177, 81) !important;
+}
+
+.dropdown-item:hover .navbar-dropdown-yellow,
+.dropdown-item:hover .navbar-dropdown-yellow i {
+  color: rgb(255, 193, 7) !important;
+}
+.dropdown-item:hover .navbar-dropdown-blue,
+.dropdown-item:hover .navbar-dropdown-blue i {
+  color: rgb(13, 110, 253) !important;
+}
 .dropdown-item:hover i,
 .dropdown-item.active i {
   color: white !important;
 }
 .meeting_icon__pen:hover {
   color: #0a77cc;
+  cursor: pointer;
 }
 .meeting_icon__trash:hover {
   color: #e40b0b;
+  cursor: pointer;
 }
 .form-check-input[type="radio"] {
   border-color: var(--bs-primary);
+}
+#reminder-checkbox-1:checked + label {
+  text-decoration: line-through;
+  color: rgb(0, 0, 0);
+}
+#reminder-checkbox-2:checked + label {
+  text-decoration: line-through;
+  color: rgb(0, 0, 0);
+}
+#reminder-checkbox-3:checked + label {
+  text-decoration: line-through;
+  color: rgb(0, 0, 0);
+}
+#reminder-checkbox-4:checked + label {
+  text-decoration: line-through;
+  color: rgb(0, 0, 0);
+}
+#reminder-checkbox-5:checked + label {
+  text-decoration: line-through;
+  color: rgb(0, 0, 0);
+}
+#reminder-checkbox-6:checked + label {
+  text-decoration: line-through;
+  color: rgb(0, 0, 0);
+}
+#reminder-checkbox-7:checked + label {
+  text-decoration: line-through;
+  color: rgb(0, 0, 0);
+}
+#reminder-checkbox-8:checked + label {
+  text-decoration: line-through;
+  color: rgb(0, 0, 0);
+}
+#reminder-checkbox-9:checked + label {
+  text-decoration: line-through;
+  color: rgb(0, 0, 0);
+}
+#reminder-checkbox-10:checked + label {
+  text-decoration: line-through;
+  color: rgb(0, 0, 0);
+}
+#reminder-checkbox-11:checked + label {
+  text-decoration: line-through;
+  color: rgb(0, 0, 0);
+}
+#reminder-checkbox-12:checked + label {
+  text-decoration: line-through;
+  color: rgb(0, 0, 0);
+}
+#reminder-checkbox-13:checked + label {
+  text-decoration: line-through;
+  color: rgb(0, 0, 0);
+}
+#reminder-checkbox-14:checked + label {
+  text-decoration: line-through;
+  color: rgb(0, 0, 0);
+}
+#reminder-checkbox-15:checked + label {
+  text-decoration: line-through;
+  color: rgb(0, 0, 0);
 }
 
 .form-range::-webkit-slider-thumb {
@@ -578,4 +654,118 @@ tbody tr {
 .nav-link:hover {
   background-color: #f8f9fa;
   text-decoration: none;
+}
+
+.constum-icon {
+  color: #0c966f;
+  border: 2px solid #0c966f;
+  font-size: 22px;
+  border-radius: 8px;
+}
+
+.chat-container {
+  background-color: #ffffff;
+  padding: 16px;
+  border: 2px;
+  border-radius: 10px;
+}
+
+.chat-message-body {
+  background-color: white;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ffffff;
+  border-radius: 10px;
+  padding: 10px 15px;
+  word-wrap: break-word;
+}
+
+.chat_width {
+  max-width: 600px;
+}
+
+.chat-message-body {
+  width: 100%;
+}
+.chat-avatar.outside {
+  margin: -20px;
+}
+.chat-avatar {
+  width: 30px;
+  height: 30px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+.add-button {
+  /* Sizing & Shape */
+  width: 32px;
+  height: 32px;
+  border-radius: 50%; /* Makes it a circle */
+
+  /* Colors & Styling */
+  background-color: #0c966f;
+  color: white;
+  border: 2px solid white; /* Adds a nice separation */
+
+  /* Flexbox to center the '+' icon */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.add-button > i {
+  font-size: 1.5rem; /* Size of the plus icon */
+  font-weight: bold;
+}
+/* --- Custom Styles for the New Sidebar --- */
+.quick-action-btn {
+  width: 52px;
+  aspect-ratio: 1;
+}
+.status-badge-pending {
+  background-color: #fef3c7 !important;
+  color: #a16207 !important;
+}
+.status-badge-inprogress {
+  background-color: #dbeafe !important;
+  color: #2563eb !important;
+}
+.colleague-status .bi {
+  font-size: 1.1rem; /* Adjust icon size if needed */
+}
+.colleague-status .text-secondary {
+  color: #475569 !important;
+}
+.quick-action-wrapper {
+  position: relative; /* CRUCIAL: This makes the container the positioning parent */
+  display: inline-block; /* Makes the wrapper only as big as the button inside it */
+}
+
+/* The overlapping '+' add button */
+.add-button {
+  /* Positioning */
+  position: absolute;
+  bottom: -2px; /* Position relative to the wrapper */
+  right: -2px;
+
+  /* Sizing & Shape */
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+
+  /* Colors & Styling */
+  background-color: #0c966f; /* Green background */
+  color: white; /* White plus sign */
+  border: 2px solid white; /* White border for separation */
+
+  /* Center the '+' icon inside the circle */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none; /* Allows clicks to pass through to the button below */
+}
+
+.add-button > i {
+  font-size: 1.2rem;
+  font-weight: bold;
 }

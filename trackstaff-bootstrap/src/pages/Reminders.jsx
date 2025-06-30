@@ -104,8 +104,8 @@ const Reminders = () => {
                         <input
                           className="form-check-input"
                           type="checkbox"
-                          value=""
                           id="reminder-checkbox-1"
+                          style={{ borderColor: "#000" }}
                         />
                         <label
                           className="form-check-label"
@@ -148,8 +148,8 @@ const Reminders = () => {
                         <input
                           className="form-check-input"
                           type="checkbox"
-                          value=""
                           id="reminder-checkbox-2"
+                          style={{ borderColor: "#000" }}
                         />
                         <label
                           className="form-check-label"
@@ -192,8 +192,8 @@ const Reminders = () => {
                         <input
                           className="form-check-input"
                           type="checkbox"
-                          value=""
                           id="reminder-checkbox-3"
+                          style={{ borderColor: "#000" }}
                         />
                         <label
                           className="form-check-label"
@@ -238,6 +238,7 @@ const Reminders = () => {
                           type="checkbox"
                           value=""
                           id="reminder-checkbox-4"
+                          style={{ borderColor: "#000" }}
                         />
                         <label
                           className="form-check-label"
@@ -282,6 +283,7 @@ const Reminders = () => {
                           type="checkbox"
                           value=""
                           id="reminder-checkbox-5"
+                          style={{ borderColor: "#000" }}
                         />
                         <label
                           className="form-check-label"
@@ -326,6 +328,7 @@ const Reminders = () => {
                           type="checkbox"
                           value=""
                           id="reminder-checkbox-6"
+                          style={{ borderColor: "#000" }}
                         />
                         <label
                           className="form-check-label"
@@ -379,6 +382,7 @@ const Reminders = () => {
                           type="checkbox"
                           value=""
                           id="reminder-checkbox-7"
+                          style={{ borderColor: "#000" }}
                         />
                         <label
                           className="form-check-label"
@@ -454,6 +458,7 @@ const Reminders = () => {
                           type="checkbox"
                           value=""
                           id="reminder-checkbox-8"
+                          style={{ borderColor: "#000" }}
                         />
                         <label
                           className="form-check-label"
@@ -529,6 +534,7 @@ const Reminders = () => {
                           type="checkbox"
                           value=""
                           id="reminder-checkbox-9"
+                          style={{ borderColor: "#000" }}
                         />
                         <label
                           className="form-check-label"
@@ -604,6 +610,7 @@ const Reminders = () => {
                           type="checkbox"
                           value=""
                           id="reminder-checkbox-10"
+                          style={{ borderColor: "#000" }}
                         />
                         <label
                           className="form-check-label"
@@ -679,6 +686,7 @@ const Reminders = () => {
                           type="checkbox"
                           value=""
                           id="reminder-checkbox-11"
+                          style={{ borderColor: "#000" }}
                         />
                         <label
                           className="form-check-label"
@@ -754,6 +762,7 @@ const Reminders = () => {
                           type="checkbox"
                           value=""
                           id="reminder-checkbox-12"
+                          style={{ borderColor: "#000" }}
                         />
                         <label
                           className="form-check-label"
@@ -838,6 +847,7 @@ const Reminders = () => {
                           type="checkbox"
                           value=""
                           id="reminder-checkbox-13"
+                          style={{ borderColor: "#000" }}
                         />
                         <label
                           className="form-check-label"
@@ -914,6 +924,7 @@ const Reminders = () => {
                           type="checkbox"
                           value=""
                           id="reminder-checkbox-14"
+                          style={{ borderColor: "#000" }}
                         />
                         <label
                           className="form-check-label"
@@ -990,6 +1001,7 @@ const Reminders = () => {
                           type="checkbox"
                           value=""
                           id="reminder-checkbox-15"
+                          style={{ borderColor: "#000" }}
                         />
                         <label
                           className="form-check-label"

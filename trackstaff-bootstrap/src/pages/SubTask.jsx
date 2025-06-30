@@ -136,9 +136,9 @@ const SubTask = () => {
                   Priority
                 </th>
                 <th scope="col" style={{ textAlign: "left" }}>
-                  Remarks
+                  Active Logs
                 </th>
-                <th scope="col">Action</th>
+                {/* <th scope="col"></th> */}
               </tr>
             </thead>
             <tbody>
@@ -149,313 +149,119 @@ const SubTask = () => {
                 <td className="text-start">Cheap Flights Nepal</td>
                 <td className="text-start">Dynamic FAQ System</td>
                 <td>
-                  <select
-                    className="form-select text-dark-emphasis w-auto mx-auto"
-                    aria-label="Task Status"
-                  >
-                    <option selected="" disabled="">
-                      Completed
-                    </option>
-                    <option value="pending">Pending</option>
-                    <option value="inprogress">In Progress</option>
-                  </select>
+                  <td>
+                    <span className="bg-warning text-white w-auto rounded-2 py-1 px-2">
+                      Pending
+                    </span>
+                  </td>
                 </td>
                 <td>
-                  <select
-                    className="form-select text-dark-emphasis w-auto mx-auto"
-                    aria-label="Task Priority"
-                  >
-                    <option selected="" disabled="">
-                      High
-                    </option>
-                    <option value="low">Low</option>
-                    <option value="medium">Medium</option>
-                  </select>
+                  <span className="bg-danger text-white w-auto rounded-2 py-1 px-2">
+                    High
+                  </span>
                 </td>
                 <td className="text-start">
-                  <a href="# " className="text-primary">
-                    + Add Remarks
-                  </a>
+                  <img
+                    src="./img/user-1.jpg"
+                    alt=""
+                    style={{
+                      width: "40px",
+                      height: "40px",
+                      borderRadius: "50%",
+                      marginRight: "0px",
+                      zIndex: 3,
+                    }}
+                  />
+                  <img
+                    src="../img/user-2.jpg"
+                    alt=""
+                    style={{
+                      width: "40px",
+                      height: "40px",
+                      borderRadius: "50%",
+
+                      zIndex: 2,
+                    }}
+                  />
+                  <img
+                    src="./img/user-3.jpg"
+                    alt=""
+                    style={{
+                      width: "40px",
+                      height: "40px",
+                      borderRadius: "50%",
+
+                      zIndex: 1,
+                    }}
+                  />
                 </td>
 
                 <td>
                   <div className="d-flex align-items-center gap-2 justify-content-center">
-                    <button type="button" className="btn btn-primary">
-                      <i className="bi bi-arrow-clockwise"></i>
-                    </button>
-                    <button type="button" className="btn btn-danger">
-                      <i className="bi bi-trash"></i>
+                    <button type="button" className="btn btn-task w-100px px-4">
+                      <i className="bi bi-chat pe-2"></i> Manage Task
                     </button>
                   </div>
                 </td>
               </tr>
               <tr>
                 <th scope="row" className="align-middle">
-                  2
+                  1
                 </th>
                 <td className="text-start">Cheap Flights Nepal</td>
-                <td className="text-start">Update home page design</td>
+                <td className="text-start">Dynamic FAQ System</td>
                 <td>
-                  <select
-                    className="form-select text-dark-emphasis w-auto mx-auto"
-                    aria-label="Task Status"
-                  >
-                    <option selected="" disabled="">
-                      Completed
-                    </option>
-                    <option value="pending">Pending</option>
-                    <option value="inprogress">In Progress</option>
-                  </select>
+                  <td>
+                    <span className="bg-warning text-white w-auto rounded-2 py-1 px-2">
+                      Pending
+                    </span>
+                  </td>
                 </td>
                 <td>
-                  <select
-                    className="form-select text-dark-emphasis w-auto mx-auto"
-                    aria-label="Task Priority"
-                  >
-                    <option selected="" disabled="">
-                      High
-                    </option>
-                    <option value="low">Low</option>
-                    <option value="medium">Medium</option>
-                  </select>
+                  <span className="bg-danger text-white w-auto rounded-2 py-1 px-2">
+                    High
+                  </span>
+                </td>
+                <td className="text-start">
+                  <img
+                    src="./img/user-1.jpg"
+                    alt=""
+                    style={{
+                      width: "40px",
+                      height: "40px",
+                      borderRadius: "50%",
+                      marginRight: "0px",
+                      zIndex: 3,
+                    }}
+                  />
+                  <img
+                    src="../img/user-2.jpg"
+                    alt=""
+                    style={{
+                      width: "40px",
+                      height: "40px",
+                      borderRadius: "50%",
+
+                      zIndex: 2,
+                    }}
+                  />
+                  <img
+                    src="./img/user-3.jpg"
+                    alt=""
+                    style={{
+                      width: "40px",
+                      height: "40px",
+                      borderRadius: "50%",
+
+                      zIndex: 1,
+                    }}
+                  />
                 </td>
 
-                <td className="text-start">
-                  <div className="dropdown position-static w-100">
-                    <a
-                      href="#"
-                      className="w-100 d-flex align-items-center justify-content-between"
-                      role="button"
-                      data-bs-toggle="dropdown"
-                      aria-expanded="false"
-                    >
-                      <div className="d-flex align-items-center gap-2">
-                        <img
-                          src="../img/user-1.jpg"
-                          alt="Avatar"
-                          className="avatar"
-                        />
-                        <img
-                          src="../img/user-2.jpg"
-                          alt="Avatar"
-                          className="avatar"
-                        />
-                        <img
-                          src="../img/user-3.jpg"
-                          alt="Avatar"
-                          className="avatar"
-                        />
-                        <img
-                          src="../img/user-1.jpg"
-                          alt="Avatar"
-                          className="avatar"
-                        />
-                        <p className="m-0">(2)</p>
-                      </div>
-                      <p className="m-0 text-progress">
-                        View all <span className="bi bi-chevron-down"></span>
-                      </p>
-                    </a>
-                    <ul
-                      className="dropdown-menu border-0 p-2"
-                      style={{ width: "350px;" }}
-                    >
-                      <li className="border-start border-4 border-primary rounded-2 bg-primary-subtle p-2 my-2">
-                        <div className="d-flex">
-                          <img
-                            src="../img/user-1.jpg"
-                            alt="Avatar"
-                            className="avatar"
-                          />
-                          <p className="m-0 ms-3 fw-semibold">
-                            Manish Shrestha
-                          </p>
-                        </div>
-                        <small className="m-0 text-muted">
-                          Hello world, Good Morning!!
-                        </small>
-                      </li>
-                      <li className="border-start border-4 border-primary rounded-2 bg-primary-subtle p-2 my-2">
-                        <div className="d-flex">
-                          <img
-                            src="../img/user-1.jpg"
-                            alt="Avatar"
-                            className="avatar"
-                          />
-                          <p className="m-0 ms-3 fw-semibold">
-                            Manish Shrestha
-                          </p>
-                        </div>
-                        <small className="m-0 text-muted">
-                          Hello world, Good Morning!!
-                        </small>
-                      </li>
-                      <li className="border-start border-4 border-primary rounded-2 bg-primary-subtle p-2 my-2">
-                        <div className="d-flex">
-                          <img
-                            src="../img/user-1.jpg"
-                            alt="Avatar"
-                            className="avatar"
-                          />
-                          <p className="m-0 ms-3 fw-semibold">
-                            Manish Shrestha
-                          </p>
-                        </div>
-                        <small className="m-0 text-muted">
-                          Hello world, Good Morning!!
-                        </small>
-                      </li>
-                      <li className="text-end">
-                        <a href="#" className="text-primary">
-                          + Add Remark
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-                </td>
                 <td>
                   <div className="d-flex align-items-center gap-2 justify-content-center">
-                    <button type="button" className="btn btn-primary">
-                      <i className="bi bi-arrow-clockwise"></i>
-                    </button>
-                    <button type="button" className="btn btn-danger">
-                      <i className="bi bi-trash"></i>
-                    </button>
-                  </div>
-                </td>
-              </tr>
-              <tr>
-                <th scope="row" className="align-middle">
-                  3
-                </th>
-                <td className="text-start">Cheap Flights Nepal</td>
-                <td className="text-start">Add Favorite button</td>
-
-                <td>
-                  <select
-                    className="form-select text-dark-emphasis w-auto mx-auto"
-                    aria-label="Task Status"
-                  >
-                    <option selected="" disabled="">
-                      Completed
-                    </option>
-                    <option value="pending">Pending</option>
-                    <option value="inprogress">In Progress</option>
-                  </select>
-                </td>
-                <td>
-                  <select
-                    className="form-select text-dark-emphasis w-auto mx-auto"
-                    aria-label="Task Priority"
-                  >
-                    <option selected="" disabled="">
-                      High
-                    </option>
-                    <option value="low">Low</option>
-                    <option value="medium">Medium</option>
-                  </select>
-                </td>
-
-                <td className="text-start">
-                  <div className="dropdown position-static w-100">
-                    <a
-                      href="#"
-                      className="w-100 d-flex align-items-center justify-content-between"
-                      role="button"
-                      data-bs-toggle="dropdown"
-                      aria-expanded="false"
-                    >
-                      <div className="d-flex align-items-center gap-2">
-                        <img
-                          src="../img/user-1.jpg"
-                          alt="Avatar"
-                          className="avatar"
-                        />
-                        <img
-                          src="../img/user-2.jpg"
-                          alt="Avatar"
-                          className="avatar"
-                        />
-                        <img
-                          src="../img/user-3.jpg"
-                          alt="Avatar"
-                          className="avatar"
-                        />
-                        <img
-                          src="../img/user-1.jpg"
-                          alt="Avatar"
-                          className="avatar"
-                        />
-                        <p className="m-0">(2)</p>
-                      </div>
-                      <p className="m-0 text-progress">
-                        View all <span className="bi bi-chevron-down"></span>
-                      </p>
-                    </a>
-                    <ul
-                      className="dropdown-menu border-0 p-2"
-                      style={{ width: "350px;" }}
-                    >
-                      <li className="border-start border-4 border-primary rounded-2 bg-primary-subtle p-2 my-2">
-                        <div className="d-flex">
-                          <img
-                            src="../img/user-1.jpg"
-                            alt="Avatar"
-                            className="avatar"
-                          />
-                          <p className="m-0 ms-3 fw-semibold">
-                            Manish Shrestha
-                          </p>
-                        </div>
-                        <small className="m-0 text-muted">
-                          Hello world, Good Morning!!
-                        </small>
-                      </li>
-                      <li className="border-start border-4 border-primary rounded-2 bg-primary-subtle p-2 my-2">
-                        <div className="d-flex">
-                          <img
-                            src="../img/user-1.jpg"
-                            alt="Avatar"
-                            className="avatar"
-                          />
-                          <p className="m-0 ms-3 fw-semibold">
-                            Manish Shrestha
-                          </p>
-                        </div>
-                        <small className="m-0 text-muted">
-                          Hello world, Good Morning!!
-                        </small>
-                      </li>
-                      <li className="border-start border-4 border-primary rounded-2 bg-primary-subtle p-2 my-2">
-                        <div className="d-flex">
-                          <img
-                            src="../img/user-1.jpg"
-                            alt="Avatar"
-                            className="avatar"
-                          />
-                          <p className="m-0 ms-3 fw-semibold">
-                            Manish Shrestha
-                          </p>
-                        </div>
-                        <small className="m-0 text-muted">
-                          Hello world, Good Morning!!
-                        </small>
-                      </li>
-                      <li className="text-end">
-                        <a href="#" className="text-primary">
-                          + Add Remark
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-                </td>
-                <td>
-                  <div className="d-flex align-items-center gap-2 justify-content-center">
-                    <button type="button" className="btn btn-primary">
-                      <i className="bi bi-arrow-clockwise"></i>
-                    </button>
-                    <button type="button" className="btn btn-danger">
-                      <i className="bi bi-trash"></i>
+                    <button type="button" className="btn btn-task w-100px px-4">
+                      <i className="bi bi-chat pe-2"></i> Manage Task
                     </button>
                   </div>
                 </td>
