@@ -213,7 +213,7 @@ const EmpTasks = () => {
                         </a>
                       </li>
                       <li>
-                        <a className="dropdown-item" href="subtasks.html">
+                        <a className="dropdown-item" href="/employee/subtasks">
                           <i className="bi bi-box-arrow-up-right text-primary me-1"></i>
                           Update Sub Task
                         </a>
@@ -289,7 +289,7 @@ const EmpTasks = () => {
                         </a>
                       </li>
                       <li>
-                        <a className="dropdown-item" href="subtasks.html">
+                        <a className="dropdown-item" href="/employee/subtasks">
                           <i className="bi bi-box-arrow-up-right text-primary me-1"></i>
                           Update Sub Task
                         </a>
@@ -365,7 +365,7 @@ const EmpTasks = () => {
                         </a>
                       </li>
                       <li>
-                        <a className="dropdown-item" href="subtasks.html">
+                        <a className="dropdown-item" href="/employee/subtasks">
                           <i className="bi bi-box-arrow-up-right text-primary me-1"></i>
                           Update Sub Task
                         </a>

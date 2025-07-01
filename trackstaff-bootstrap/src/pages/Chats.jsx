@@ -1,15 +1,22 @@
 import { useState } from "react";
 import PostMessageModal from "../Components/Modals/postMessageModal";
 import AddSharedLinkModal from "../Components/Modals/addLinkModal";
-
+import AddTaskModal from "../Components/Modals/taskModal";
 const Chats = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
-
+  const [taskModalOpen, setTaskModalOpen] = useState(false);
   const handleOpenLinkModal = () => {
     setIsModalOpen(true);
   };
-
+  const handleCreateTask = (taskData) => {
+    console.log("Task created:", taskData);
+    alert("Task Created!");
+    setTaskModalOpen(false);
+  };
+  const openTaskModal = () => {
+    setTaskModalOpen(true);
+  };
   const handleCloseLinkModal = () => {
     setIsModalOpen(false);
   };
@@ -90,6 +97,111 @@ const Chats = () => {
                             }}
                           ></i>
                         </a>
+                      </div>
+                    </div>
+                  </div>
+                  {/*  Add Shared Link Modal */}
+                  <div
+                    class="modal fade"
+                    id="sharedLinkModal"
+                    tabindex="-1"
+                    aria-labelledby="sharedLinkModalLabel"
+                    aria-hidden="true"
+                  >
+                    <div class="modal-dialog modal-dialog-centered">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="sharedLinkModalLabel">
+                            Shared Links
+                          </h5>
+                          <button
+                            type="button"
+                            class="btn-close"
+                            data-bs-dismiss="modal"
+                            aria-label="Close"
+                          ></button>
+                        </div>
+                        <div class="modal-body">
+                          <a href="#" target="_blank">
+                            <h5>
+                              Kamsansar Figma Link <span>(3 days ago)</span>
+                            </h5>
+                            <p class="link-progress">https://example.com</p>
+                          </a>
+                          <a href="#" target="_blank">
+                            <h5>
+                              Cheap Flight Booking Link{" "}
+                              <span>(2 days ago)</span>
+                            </h5>
+                            <p class="link-progress">https://example.com</p>
+                          </a>
+                          <a href="#" target="_blank">
+                            <h5>
+                              TrackStaff Dashboard Link <span>(1 day ago)</span>
+                            </h5>
+                            <p class="link-progress">https://example.com</p>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  {/* Add Shared File Modal */}
+                  <div
+                    class="modal fade"
+                    id="addSharedFileModal"
+                    tabindex="-1"
+                    aria-labelledby="addSharedFileModalLabel"
+                    aria-hidden="true"
+                  >
+                    <div class="modal-dialog modal-dialog-centered">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="addSharedFileModalLabel">
+                            Add Shared File
+                          </h5>
+                          <button
+                            type="button"
+                            class="btn-close"
+                            data-bs-dismiss="modal"
+                            aria-label="Close"
+                          ></button>
+                        </div>
+                        <div class="modal-body">
+                          <form>
+                            <div class="mb-3">
+                              <label for="sharedFile" class="form-label">
+                                File
+                              </label>
+                              <input
+                                class="form-control"
+                                type="file"
+                                id="sharedFile"
+                              />
+                            </div>
+                            <div class="mb-3">
+                              <label for="sharedFileDesc" class="form-label">
+                                Description
+                              </label>
+                              <textarea
+                                class="form-control"
+                                id="sharedFileDesc"
+                                rows="3"
+                              ></textarea>
+                            </div>
+                          </form>
+                        </div>
+                        <div class="modal-footer">
+                          <button
+                            type="button"
+                            class="btn border px-4"
+                            data-bs-dismiss="modal"
+                          >
+                            Close
+                          </button>
+                          <button type="button" class="btn btn-primary px-4">
+                            Share
+                          </button>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -377,7 +489,11 @@ const Chats = () => {
                       >
                         <i className="bi bi-plus-lg"></i>
                       </button>
-                      <ul className="dropdown-menu dropdown-menu-start">
+                      <ul
+                        className="dropdown-menu dropdown-menu-start"
+                        data-bs-toggle="modal"
+                        data-bs-target="#addSharedFileModal"
+                      >
                         <li>
                           <button
                             className="dropdown-item"
@@ -524,6 +640,7 @@ const Chats = () => {
                         <i
                           className="bi bi-list-check fs-4"
                           style={{ color: "#0c966f" }}
+                          onClick={openTaskModal}
                         ></i>
 
                         {/* <!-- Add Button --> */}
@@ -1144,6 +1261,12 @@ const Chats = () => {
         isOpen={isModalOpen}
         onClose={handleCloseLinkModal}
         onSubmit={handleLinkSubmit}
+      />
+      <AddTaskModal
+        isOpen={taskModalOpen}
+        onClose={() => setTaskModalOpen(false)}
+        onSubmit={handleCreateTask}
+        hideProjectSelect={true}
       />
     </main>
   );

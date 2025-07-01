@@ -34,6 +34,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import Chats from "./pages/Chats";
 import Calendar from "./pages/Calendar";
+import EmpSubTask from "./employee-pages/emp-subtasks";
 function App() {
   return (
     <AuthProvider>
@@ -89,6 +90,7 @@ function App() {
             <Route path="attendence" element={<EmpAttendence />} />
             <Route path="meetings" element={<EmpMeetings />} />
             <Route path="reminders" element={<EmpReminders />} />
+            <Route path="subtasks" element={<EmpSubTask />} />
           </Route>
 
           {/* Redirect old employee routes to new structure */}

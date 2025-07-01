@@ -1,6 +1,11 @@
 import React, { useState, useEffect } from "react";
 
-const AddTaskModal = ({ isOpen, onClose, onSubmit }) => {
+const AddTaskModal = ({
+  isOpen,
+  onClose,
+  onSubmit,
+  hideProjectSelect = false,
+}) => {
   const [show, setShow] = useState(false);
   const [fields, setFields] = useState([]);
 
@@ -61,24 +66,26 @@ const AddTaskModal = ({ isOpen, onClose, onSubmit }) => {
             </div>
             <div className="modal-body">
               <form onSubmit={handleSubmit}>
-                <div className="mb-3">
-                  <label htmlFor="task-status" className="form-label">
-                    Project
-                  </label>
-                  <select
-                    className="form-select text-dark-emphasis"
-                    id="task-status"
-                    aria-label="Task Status"
-                  >
-                    <option value="" disabled selected>
-                      Select Project
-                    </option>
-                    <option value="project1">Project 1</option>
-                    <option value="project2">Project 2</option>
-                    <option value="project3">Project 3</option>
-                    <option value="project4">Project 4</option>
-                  </select>
-                </div>
+                {!hideProjectSelect && (
+                  <div className="mb-3">
+                    <label htmlFor="task-status" className="form-label">
+                      Project
+                    </label>
+                    <select
+                      className="form-select text-dark-emphasis"
+                      id="task-status"
+                      aria-label="Task Status"
+                    >
+                      <option value="" disabled selected>
+                        Select Project
+                      </option>
+                      <option value="project1">Project 1</option>
+                      <option value="project2">Project 2</option>
+                      <option value="project3">Project 3</option>
+                      <option value="project4">Project 4</option>
+                    </select>
+                  </div>
+                )}
 
                 <div className="mb-3">
                   <label htmlFor="task-title" className="form-label">

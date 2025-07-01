@@ -1,4 +1,3 @@
-import React from "react";
 import "../screenproof.css";
 
 const ScreenProofs = () => {
@@ -68,16 +67,7 @@ const ScreenProofs = () => {
             </li>
           </ul>
         </div>
-        {/* <style>
-        .hover-options {
-          opacity: 0;
-          transition: opacity 0.1s ease-in-out;
-        }
 
-        .card-body:hover .hover-options {
-          opacity: 1;
-        }
-      </style> */}
         <div className="tab-content rounded-3 bg-white" id="pills-tabContent">
           <div
             className="tab-pane fade show active p-2"
@@ -109,7 +99,7 @@ const ScreenProofs = () => {
                       src="../img/screen.jpg"
                       alt="Proof"
                       className="img-fluid w-100 object-fit-cover"
-                      style={{ aspectRatio: "16/9;" }}
+                      style={{ aspectRatio: "16/9" }}
                     />
                     <div className="d-flex position-absolute bottom-0 left-0 m-1">
                       <p className="bg-primary text-white py-1 px-2 rounded-3 m-0">
@@ -143,10 +133,10 @@ const ScreenProofs = () => {
                 <div className="card h-100 overflow-hidden">
                   <div className="card-body d-flex gap-2 position-relative p-0">
                     <img
-                      src="../img/screen1.jpg"
+                      src="../img/screen.jpg"
                       alt="Proof"
                       className="img-fluid w-100 object-fit-cover"
-                      style={{ aspectRatio: "16/9;" }}
+                      style={{ aspectRatio: "16/9" }}
                     />
                     <div className="d-flex position-absolute bottom-0 left-0 m-1">
                       <p className="bg-primary text-white py-1 px-2 rounded-3 m-0">
@@ -183,7 +173,7 @@ const ScreenProofs = () => {
                       src="../img/screen2.jpg"
                       alt="Proof"
                       className="img-fluid w-100 object-fit-cover"
-                      style={{ aspectRatio: "16/9;" }}
+                      style={{ aspectRatio: "16/9" }}
                     />
                     <div className="d-flex position-absolute bottom-0 left-0 m-1">
                       <p className="bg-primary text-white py-1 px-2 rounded-3 m-0">

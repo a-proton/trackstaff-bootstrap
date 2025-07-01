@@ -126,6 +126,11 @@ body {
   background-color: #0d99ff;
   color: white;
 }
+.btn-task:hover {
+  background-color: #32a5f7 !important;
+  color: white !important;
+  box-shadow: none !important;
+}
 
 .btn-progress:hover {
   background-color: var(--bs-progress-hover);
@@ -722,6 +727,10 @@ tbody tr {
   width: 52px;
   aspect-ratio: 1;
 }
+/* .quick-action-btn:hover {
+  background-color: #1ab189;
+  color: white;
+} */
 .status-badge-pending {
   background-color: #fef3c7 !important;
   color: #a16207 !important;

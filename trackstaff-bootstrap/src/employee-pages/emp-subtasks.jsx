@@ -1,7 +1,7 @@
-import React, { useState } from "react";
-import AddTaskModal from "../Components/Modals/addLinkModal";
+import { useState } from "react";
+import AddTaskModal from "../Components/Modals/taskModal";
 import RemarksModal from "../Components/Modals/addRemarksmodal";
-const SubTask = () => {
+const EmpSubTask = () => {
   const [modalOpen, setModalOpen] = useState(false);
   const [remarksOpen, setRemarksOpen] = useState(false);
 
@@ -198,7 +198,7 @@ const SubTask = () => {
                       className="btn btn-task w-100px px-4"
                       onClick={() => setRemarksOpen(true)}
                     >
-                      <i className="bi bi-chat pe-2"></i> Add Remarks
+                      <i className="bi bi-chat pe-2"></i> Manage Task
                     </button>
                   </div>
                 </td>
@@ -217,4 +217,4 @@ const SubTask = () => {
   );
 };
 
-export default SubTask;
+export default EmpSubTask;
