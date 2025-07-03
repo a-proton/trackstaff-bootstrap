@@ -124,7 +124,7 @@ const EmployeeManagement = () => {
           {/* <!-- Logs Heading Start --> */}
           <div className="d-flex">
             <div className="px-3 pb-3">
-              <h5 className="fs-2 fw-semibold">Employee Management</h5>
+              <h5 className="fs-3 fw-semibold">Employee Management</h5>
               {/* <!-- <p className="">Track your work performance</p> --> */}
             </div>
           </div>

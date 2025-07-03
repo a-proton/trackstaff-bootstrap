@@ -20,7 +20,7 @@ const EmpSubTask = () => {
         {/* My Tasks Heading Start */}
         <div className="row">
           <div className="col-12 d-flex align-items-center justify-content-between gap-2">
-            <h5 className="fs-2 fw-semibold">
+            <h5 className="fs-3 fw-semibold">
               <a href="/tasks">
                 <i className="bi bi-chevron-left"></i>
               </a>{" "}

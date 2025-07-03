@@ -778,3 +778,42 @@ tbody tr {
   font-size: 1.2rem;
   font-weight: bold;
 }
+.chat-container {
+  max-width: 100%;
+  margin: auto;
+}
+
+.chat-message-body {
+  border-radius: 10px;
+  padding: 10px 15px;
+  word-wrap: break-word;
+}
+
+.chat-avatar {
+  width: 30px;
+  height: 30px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+.manage-team {
+  height: 40px;
+  padding: 8px;
+  width: 245px;
+  border: 1px solid;
+  border-color: #1ab189;
+  color: #1ab189;
+  margin-top: 7px;
+}
+.manage-team:hover {
+  height: 40px;
+  padding: 8px;
+  width: 245px;
+  border: 1px solid;
+  border-color: #1ab189;
+  color: #ffffff;
+  margin-top: 7px;
+  background-color: #1ab189;
+}
+.manage-team:hover .people_icon {
+  color: #ffffff !important;
+}

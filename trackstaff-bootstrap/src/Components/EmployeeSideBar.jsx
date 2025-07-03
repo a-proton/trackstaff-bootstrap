@@ -127,7 +127,7 @@ const EmployeeSideBar = () => {
 
         <ul className="dropdown-menu collapse border-0 py-0" id="chats">
           <li>
-            <NavLink className="dropdown-item" to="chats.html">
+            <NavLink className="dropdown-item" to="/employee/chats">
               <div className="d-flex align-items-center gap-2">
                 <i className="bi bi-record-fill pt-1"></i>
                 <span>Kamsansar Web</span>
@@ -135,7 +135,7 @@ const EmployeeSideBar = () => {
             </NavLink>
           </li>
           <li>
-            <NavLink className="dropdown-item" to="chats.html">
+            <NavLink className="dropdown-item" to="/employee/chats">
               <div className="d-flex align-items-center gap-2">
                 <i className="bi bi-record-fill pt-1"></i>
                 <span>Cheap Flight</span>

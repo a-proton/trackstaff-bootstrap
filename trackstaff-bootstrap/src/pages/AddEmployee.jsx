@@ -1,5 +1,3 @@
-import React from "react";
-
 const AddEmployee = () => {
   return (
     <main className="p-3">
@@ -7,7 +5,7 @@ const AddEmployee = () => {
         {/* <!-- Add Employee Heading Start --> */}
         <div className="d-flex">
           <div className="px-3 pb-3">
-            <h5 className="fs-2 fw-semibold">
+            <h5 className="fs-3 fw-semibold">
               <a href="/employee">
                 <i className="bi bi-chevron-left"></i>
               </a>{" "}

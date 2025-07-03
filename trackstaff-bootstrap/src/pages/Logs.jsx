@@ -7,7 +7,7 @@ const Logs = () => {
         {/* <!-- Logs Heading Start --> */}
         <div className="d-flex">
           <div className="px-3">
-            <h5 className="fs-2 fw-semibold">Employee Activity Logs</h5>
+            <h5 className="fs-3 fw-semibold">Employee Activity Logs</h5>
             {/* <!-- <p className="">Track your work performance</p> --> */}
           </div>
         </div>

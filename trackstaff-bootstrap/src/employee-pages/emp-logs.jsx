@@ -7,7 +7,7 @@ const EmpLogs = () => {
         {/* <!-- Logs Heading Start --> */}
         <div className="row">
           <div className="col-12">
-            <h5 className="fs-2 fw-semibold">Daily Activity Logs</h5>
+            <h5 className="fs-3 fw-semibold">Daily Activity Logs</h5>
             <p className="">Track your work performance</p>
           </div>
         </div>

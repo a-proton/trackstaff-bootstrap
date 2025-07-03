@@ -8,7 +8,7 @@ const EmpAttendence = () => {
           {/* <!-- Attendance Heading Start --> */}
           <div className="row">
             <div className="col-12">
-              <h5 className="fs-2 fw-semibold">Attendance</h5>
+              <h5 className="fs-3 fw-semibold">Attendance</h5>
               <p className="">Track your work hours and attendance</p>
             </div>
           </div>

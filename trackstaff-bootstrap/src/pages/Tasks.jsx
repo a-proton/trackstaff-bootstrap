@@ -20,7 +20,7 @@ const Tasks = () => {
         {/* Employee Tasks Heading Start */}
         <div className="row">
           <div className="col-12">
-            <h5 className="fs-2 fw-semibold">Employee Task List</h5>
+            <h5 className="fs-3 fw-semibold">Employee Task List</h5>
           </div>
         </div>
 

@@ -35,6 +35,9 @@ import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import Chats from "./pages/Chats";
 import Calendar from "./pages/Calendar";
 import EmpSubTask from "./employee-pages/emp-subtasks";
+import EmpChats from "./employee-pages/emp-chats";
+import EmpCalendar from "./employee-pages/emp-calendar";
+import ManageTeam from "./pages/ManageTeam";
 function App() {
   return (
     <AuthProvider>
@@ -72,6 +75,7 @@ function App() {
             <Route path="edit-employee" element={<EditEmployee />} />
             <Route path="chats" element={<Chats />} />
             <Route path="calendarView" element={<Calendar />} />
+            <Route path="manageteam" element={<ManageTeam />} />
           </Route>
 
           {/* Employee Routes - Only accessible by employees - NOW WITH LAYOUT */}
@@ -91,12 +95,26 @@ function App() {
             <Route path="meetings" element={<EmpMeetings />} />
             <Route path="reminders" element={<EmpReminders />} />
             <Route path="subtasks" element={<EmpSubTask />} />
+            <Route path="chats" element={<EmpChats />} />
+            <Route path="calendar" element={<EmpCalendar />} />
           </Route>
 
           {/* Redirect old employee routes to new structure */}
           <Route
             path="/employee-dashboard"
             element={<Navigate to="/employee/dashboard" replace />}
+          />
+          <Route
+            path="/employee-subtasks"
+            element={<Navigate to="/employee/subtasks" replace />}
+          />
+          <Route
+            path="/employee-chats"
+            element={<Navigate to="/employee/chats" replace />}
+          />
+          <Route
+            path="/employee-calendar"
+            element={<Navigate to="/employee/calendar" replace />}
           />
           <Route
             path="/employee-attendence"

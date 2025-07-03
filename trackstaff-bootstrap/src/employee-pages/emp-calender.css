@@ -1,0 +1,379 @@
+:root {
+  --text-color: #333;
+  --light-text: #666;
+  --border-color: #e0e0e0;
+  --deadline-color: #d32f2f;
+  --meeting-color: #f59e0b;
+  --reminder-color: #2196f3;
+  --task-color: #2e7d32;
+  --deadline-bg: #ffebee;
+  --meeting-bg: #fff8e1;
+  --reminder-bg: #e3f2fd;
+  --task-bg: #e8f5e9;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-color: #f8f9fa;
+  padding: 20px;
+  color: var(--text-color);
+}
+
+.calendar-container {
+  max-width: 1172px;
+  height: 100vh;
+  margin: 0 auto;
+  background-color: white;
+  border-radius: 10px;
+  padding: 25px;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+}
+
+.calendar-header {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.legend-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.legend {
+  display: flex;
+  gap: 20px;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 14px;
+}
+
+.legend-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.legend-dot.deadline {
+  background-color: var(--deadline-color);
+}
+.legend-dot.meeting {
+  background-color: var(--meeting-color);
+}
+.legend-dot.reminder {
+  background-color: var(--reminder-color);
+}
+.legend-dot.task {
+  background-color: var(--task-color);
+}
+
+.calendar-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.week-navigation {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.current-week {
+  font-size: 18px;
+  font-weight: 500;
+  min-width: 200px;
+  text-align: center;
+}
+
+.header-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.main-title-line {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.main-title-line h1 {
+  font-size: 30px;
+  font-weight: 700;
+  color: #1d2329;
+  margin: 0;
+}
+
+.nav-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  font-size: 24px;
+  color: #1d2329;
+  transition: opacity 0.2s;
+}
+
+.nav-btn:hover {
+  opacity: 0.7;
+}
+
+.header-content p {
+  font-size: 14px;
+  color: var(--light-text);
+  margin-top: 4px;
+  margin-left: 40px;
+}
+
+.active-filters-section {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 15px 0;
+  min-height: 28px;
+  font-size: 14px;
+  color: var(--light-text);
+}
+
+.active-filter-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border-radius: 16px;
+  padding: 5px 12px;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.active-filter-pill .close-pill {
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1;
+  color: inherit;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+}
+
+.active-filter-pill .close-pill:hover {
+  opacity: 1;
+}
+
+.active-filter-pill.deadline {
+  background-color: var(--deadline-bg);
+  color: var(--deadline-color);
+}
+.active-filter-pill.meeting {
+  background-color: var(--meeting-bg);
+  color: var(--meeting-color);
+}
+.active-filter-pill.reminder {
+  background-color: var(--reminder-bg);
+  color: var(--reminder-color);
+}
+.active-filter-pill.task {
+  background-color: var(--task-bg);
+  color: var(--task-color);
+}
+
+.filter-container {
+  position: relative;
+  display: inline-block;
+}
+
+.filter-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  background-color: #ffffff;
+
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.2s;
+  font-size: 14px;
+}
+
+.filter-btn:hover {
+  background-color: #f9fafb;
+}
+
+/* --- NEW --- Style for the blue count badge on the filter button */
+.selected-filter-count-badge {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 24px;
+  height: 24px;
+  background-color: #1d9bf0; /* Twitter-like blue */
+  color: white;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 50%;
+}
+
+.filter-dropdown {
+  display: none;
+  position: absolute;
+  top: calc(100% + 5px);
+  right: 0;
+  background-color: white;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  min-width: 180px;
+  z-index: 1000;
+}
+
+.filter-dropdown.show {
+  display: block;
+}
+
+.filter-dropdown ul {
+  list-style: none;
+  padding: 4px;
+  margin: 0;
+}
+
+.filter-dropdown li {
+  padding: 8px 12px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.filter-dropdown li:hover {
+  background-color: #f0f0f0; /* Softer hover */
+}
+
+.filter-dropdown li.selected {
+  background-color: #eff6ff;
+  font-weight: 500;
+  color: #0d99ff;
+}
+
+/* --- NEW --- Style for the count badge inside the dropdown */
+.filter-count {
+  background-color: #e7e7e7;
+  color: #555;
+  font-size: 0.8em;
+  font-weight: 600;
+  padding: 3px 8px;
+  border-radius: 10px;
+  margin-left: 10px;
+}
+
+/* --- NEW --- Style for the count badge on a selected item */
+.filter-dropdown li.selected .filter-count {
+  background-color: #d1e7ff;
+  color: #0d99ff;
+}
+
+.week-view {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  border: 1px solid var(--border-color);
+  border-bottom: none;
+  overflow: hidden;
+  border-top: none;
+}
+
+.day-header {
+  position: relative;
+  text-align: center;
+  padding: 30px;
+  background-color: #f9f9f9;
+  border-bottom: 1px solid var(--border-color);
+  border-right: 1px solid var(--border-color);
+}
+
+.day-name {
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: var(--light-text);
+}
+
+.day-number {
+  position: absolute;
+  bottom: 0px;
+  right: 3px;
+  font-weight: 400;
+  font-size: 16px;
+  color: var(--text-color);
+}
+
+.day-cell {
+  min-height: 250px;
+  padding: 10px;
+  border-right: 1px solid var(--border-color);
+}
+
+.day-header:nth-child(7n),
+.day-cell:nth-child(7n) {
+  border-right: none;
+}
+
+.event {
+  padding: 12px;
+  border-radius: 4px;
+  margin-bottom: 8px;
+  border-left: 3px solid;
+}
+
+.event-title {
+  font-size: 13px;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.event-user {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  opacity: 0.9;
+}
+
+.event-user .fa-user {
+  font-size: 10px;
+}
+
+.event.deadline {
+  background-color: var(--deadline-bg);
+  color: var(--deadline-color);
+  border-color: var(--deadline-color);
+}
+.event.meeting {
+  background-color: var(--meeting-bg);
+  color: var(--meeting-color);
+  border-color: var(--meeting-color);
+}
+.event.reminder {
+  background-color: var(--reminder-bg);
+  color: var(--reminder-color);
+  border-color: var(--reminder-color);
+}
+.event.task {
+  background-color: var(--task-bg);
+  color: var(--task-color);
+  border-color: var(--task-color);
+}

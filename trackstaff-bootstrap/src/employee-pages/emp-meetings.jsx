@@ -17,7 +17,7 @@ const EmpMeetings = () => {
         {/* <!-- My Tasks Heading Start --> */}
         <div className="row mb-3 justify-content-between align-items-center">
           <div className="col">
-            <h5 className="fs-2 fw-semibold">Meetings</h5>
+            <h5 className="fs-3 fw-semibold">Meetings</h5>
             {/* <!-- <p  className="">Track your work hours and attendance</p> --> */}
           </div>
           <div className="col text-end">

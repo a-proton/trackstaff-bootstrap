@@ -2,7 +2,7 @@ import { useState } from "react";
 import PostMessageModal from "../Components/Modals/postMessageModal";
 import AddSharedLinkModal from "../Components/Modals/addLinkModal";
 import AddTaskModal from "../Components/Modals/taskModal";
-const Chats = () => {
+const EmpChats = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [taskModalOpen, setTaskModalOpen] = useState(false);
@@ -43,7 +43,7 @@ const Chats = () => {
     <main className="p-2 reminders">
       <div className="p-2">
         <div className="row g-3">
-          <div className="col-12 col-xl-8 col-xxl-8">
+          <div className="col-12 col-xl-7 col-xxl-8">
             <div
               className="tab-content rounded-3 bg-white"
               id="pills-tabContent"
@@ -56,7 +56,10 @@ const Chats = () => {
               >
                 <div className="chat-container p-3">
                   {/* Header */}
-                  <div className="d-flex justify-content-between align-items-baseline mb-3   flex-wrap">
+                  <div
+                    className="d-flex justify-content-between align-items-baseline mb-3
+                   flex-wrap"
+                  >
                     <p className="mb-3 me-5 fs-5 fw-semibold">
                       Kamsansar Web Design
                     </p>
@@ -71,7 +74,7 @@ const Chats = () => {
                           placeholder="Search messages..."
                         />
                       </div>
-
+                      {/* FIXED: Updated Share Link button to use React handler */}
                       <button
                         className="btn btn-primary text-nowrap py-2"
                         data-bs-toggle="modal"
@@ -82,7 +85,7 @@ const Chats = () => {
 
                       <div className=" ">
                         <a
-                          href="/calendarView"
+                          href="/employee/calendar"
                           style={{ textDecoration: " none" }}
                         >
                           <i
@@ -617,7 +620,7 @@ const Chats = () => {
           </div>
 
           {/* <!-- START: NEW SIDEBAR CONTENT --> */}
-          <div className="col-12 col-xl-4 col-xxl-4">
+          <div className="col-12 col-xl-5 col-xxl-4">
             <div className="rounded-3 bg-white p-4 d-flex flex-column gap-4">
               {/* <!-- Quick Actions Section --> */}
               <div className="d-flex flex-column gap-3">
@@ -1253,15 +1256,6 @@ const Chats = () => {
                 </div>
               </div>
             </div>
-            <div style={{ display: "flex", justifyContent: "center" }}>
-              <div className="btn text-nowrap rounded manage-team  ">
-                <a href="/manageteam">
-                  {" "}
-                  <i class="bi bi-people text-primary people_icon"></i> Manage
-                  Team
-                </a>
-              </div>
-            </div>
           </div>
           {/* <!-- END: NEW SIDEBAR CONTENT --> */}
         </div>
@@ -1281,4 +1275,4 @@ const Chats = () => {
   );
 };
 
-export default Chats;
+export default EmpChats;
